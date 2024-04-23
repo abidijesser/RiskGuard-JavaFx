@@ -6,9 +6,10 @@ import java.sql.SQLException;
 
 public class MyDatabase {
 
-    private final String URL = "jdbc:mysql://localhost:8889/pidev2324";
-    private final String USER = "root";
-    private final String PASSWORD = "root";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/riskguard-pidev";
+    private static final String USER = "root";
+    private static final String PASSWORD = "";
+
     private Connection connection;
     private static MyDatabase instance;
 
