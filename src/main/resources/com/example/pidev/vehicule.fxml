@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+   <?import javafx.scene.control.Button?>
+   <?import javafx.scene.control.Label?>
+   <?import javafx.scene.control.TextField?>
+   <?import javafx.scene.image.Image?>
+   <?import javafx.scene.image.ImageView?>
+   <?import javafx.scene.layout.AnchorPane?>
+   <?import javafx.scene.text.Font?>
+   <?import javafx.scene.text.Text?>
+
+
+   <AnchorPane prefHeight="476.0" prefWidth="672.0" stylesheets="@css/vehicule.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.VehiculeController">
+      <children>
+         <Label fx:id="titre" layoutX="-5.0" prefHeight="70.0" prefWidth="679.0" stylesheets="@css/vehicule.css" textAlignment="CENTER" textFill="#444cdf">
+            <font>
+               <Font size="28.0" />
+            </font>
+         </Label>
+         <Text fx:id="nomve" layoutX="17.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+         <TextField fx:id="nomm" layoutX="8.0" layoutY="123.0" stylesheets="@css/vehicule.css" />
+         <Text fx:id="prenomve" layoutX="17.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prenom" />
+         <TextField fx:id="prenomm" layoutX="9.0" layoutY="174.0" />
+         <Text fx:id="cinve" layoutX="17.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cin" />
+         <TextField fx:id="cinn" layoutX="9.0" layoutY="225.0" />
+         <Text fx:id="typeve" layoutX="17.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type vehicule" />
+         <TextField fx:id="typee" layoutX="8.0" layoutY="277.0" />
+         <Text fx:id="matriculeve" layoutX="17.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Matricule" />
+         <TextField fx:id="matriculee" layoutX="9.0" layoutY="334.0" />
+         <Text fx:id="lieuve" layoutX="17.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lieu" />
+         <TextField fx:id="lieuu" layoutX="9.0" layoutY="387.0" />
+         <Text fx:id="dateve" layoutX="232.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+         <TextField fx:id="datee" layoutX="223.0" layoutY="123.0" prefHeight="26.0" prefWidth="182.0" />
+         <Text fx:id="descve" layoutX="228.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+         <TextField fx:id="descc" layoutX="228.0" layoutY="174.0" prefHeight="26.0" prefWidth="175.0" />
+         <Text fx:id="imageve" layoutX="228.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="image" />
+         <TextField fx:id="imagee" layoutX="228.0" layoutY="225.0" prefHeight="26.0" prefWidth="175.0" disable="true" />
+
+         <Button fx:id="BROWSE" layoutX="415.0" layoutY="225.0" mnemonicParsing="false" onAction="#browseImage" text="Browse" style="-fx-font-size: 12px; -fx-pref-width: 70px; -fx-pref-height: 20px; -fx-padding: 5px 10px ;" />
+         <Button fx:id="ajouter" layoutX="232.0" layoutY="312.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="96.0" text="ajouter" textFill="#f7f7f7" />
+         <ImageView fx:id="logove" fitHeight="174.0" fitWidth="138.0" layoutX="507.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@images/logo.png" />
+            </image>
+         </ImageView>
+         <Text fx:id="titreE" fill="#fcfafa" layoutX="181.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="constat Vehicule" wrappingWidth="372.7999908447266" />
+      </children>
+   </AnchorPane>

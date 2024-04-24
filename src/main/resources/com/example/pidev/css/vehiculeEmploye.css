@@ -1,0 +1,76 @@
+/* styles.css */
+.button {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-padding: 10px 20px; /* Padding */
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: #f0f0f0; /* Background color */
+}
+
+/* Table columns */
+.table-column {
+    -fx-alignment: CENTER; /* Align text to center */
+    -fx-font-size: 14px; /* Font size */
+}
+
+/* Label */
+.label {
+    -fx-font-size: 18px; /* Font size */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-text-fill: #333; /* Text color */
+}
+
+/* Text */
+.text {
+    -fx-font-size: 16px; /* Font size */
+    -fx-text-fill: #666; /* Text color */
+}
+/* Text with ID 'titre' */
+#titree {
+    -fx-font-size: 18px; /* Font size */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-text-fill: white; /* Text color */
+    -fx-background-color: #333; /* Background color */
+    -fx-padding: 5px 10px; /* Padding */
+    -fx-background-radius: 5px; /* Rounded corners */
+}
+.button#deleteve {
+    -fx-background-color: #ff0000; /* Red */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-padding: 10px 20px; /* Padding */
+    -fx-background-radius: 5px; /* Rounded corners */
+}
+
+/* Button hover effect */
+.button#deleteve:hover {
+    -fx-background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Button pressed effect */
+.button#deleteve:pressed {
+    -fx-background-color: #990000; /* Even darker red when pressed */
+}
+
+/* Button with class "updateve" */
+.button#updateve {
+    -fx-background-color: #007bff; /* Blue */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-padding: 10px 20px; /* Padding */
+    -fx-background-radius: 5px; /* Rounded corners */
+}
+
+/* Button hover effect */
+.button#updateve:hover {
+    -fx-background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Button pressed effect */
+.button#updateve:pressed {
+    -fx-background-color: #004080; /* Even darker blue when pressed */
+}
