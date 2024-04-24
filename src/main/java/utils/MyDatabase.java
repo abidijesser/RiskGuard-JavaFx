@@ -6,10 +6,10 @@ import java.sql.SQLException;
 
 public class MyDatabase {
 
-    private final String URL = "jdbc:mysql://localhost:8889/pidev2324";
+    private final String URL = "jdbc:mysql://localhost:3306/risk";
     private final String USER = "root";
-    private final String PASSWORD = "root";
-    private Connection connection;
+    private final String PASSWORD = "";
+    private static Connection connection;
     private static MyDatabase instance;
 
     private MyDatabase() {
@@ -27,7 +27,7 @@ public class MyDatabase {
         return instance;
     }
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         return connection;
     }
 }

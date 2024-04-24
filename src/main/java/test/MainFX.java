@@ -12,10 +12,10 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage primaryStage)  throws  Exception{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/addUser.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/marketingCRUD.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        primaryStage.setTitle("3A29");
+        primaryStage.setTitle("Marketing");
         primaryStage.setScene(scene);
         primaryStage.show();
 

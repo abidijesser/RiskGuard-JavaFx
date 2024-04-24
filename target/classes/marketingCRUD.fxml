@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<?import javafx.scene.control.ComboBox?>
+<VBox spacing="10" alignment="center" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.marketingCRUD" style="-fx-background-color: #f4f4f4; -fx-padding: 20px;">
+
+   <!-- Input Fields -->
+   <TextField fx:id="titreField" promptText="Enter Title" style="-fx-pref-width: 200px;"/>
+   <TextField fx:id="objectifField" promptText="Enter Objective" style="-fx-pref-width: 200px;"/>
+   <TextField fx:id="budgetField" promptText="Enter Budget" style="-fx-pref-width: 200px;"/>
+   <DatePicker fx:id="dateDebutPicker" promptText="Select Start Date" style="-fx-pref-width: 200px;"/>
+   <DatePicker fx:id="dateFinPicker" promptText="Select End Date" style="-fx-pref-width: 200px;"/>
+   <TextField fx:id="categorieField" promptText="Enter Category" style="-fx-pref-width: 200px;"/>
+   <ComboBox fx:id="categorieComboBox" promptText="Select Category" />
+
+
+   <!-- Add Marketing Button -->
+   <Button text="Add Marketing" onAction="#handleAddMarketingButton" style="-fx-pref-width: 200px;"/>
+   <Button text="update Marketing" onAction="#handleUpdateMarketingButton" style="-fx-pref-width: 200px;"/>
+   <Button fx:id="deleteMarketingButton" text="Delete Marketing" onAction="#handleDeleteMarketingButton"/>
+
+
+   <!-- TableView to display marketing data -->
+   <TableView fx:id="marketingTableView" style="-fx-pref-width: 600px; -fx-pref-height: 300px;">
+      <columns>
+         <!-- Columns to display marketing data -->
+         <TableColumn text="Title" fx:id="titreColumn" prefWidth="100"/>
+         <TableColumn text="Objective" fx:id="objectifColumn" prefWidth="100"/>
+         <TableColumn text="Budget" fx:id="budgetColumn" prefWidth="100"/>
+         <TableColumn text="Start Date" fx:id="startDateColumn" prefWidth="100"/>
+         <TableColumn text="End Date" fx:id="endDateColumn" prefWidth="100"/>
+
+      </columns>
+   </TableView>
+
+</VBox>
