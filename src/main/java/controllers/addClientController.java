@@ -2,6 +2,7 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import models.Client;
 import services.clientService;
@@ -38,21 +39,45 @@ public class addClientController {
     @FXML
     private TextField adresseDomicileTF;
 
+    private void showAlert(String title, String content) {
+        // Créez ici une alerte avec JavaFX
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
     @FXML
     void addClient(ActionEvent event) {
         try {
+
+            if (nameTF.getText().trim().isEmpty() ||
+                    prenomTF.getText().trim().isEmpty() ||
+                    emailTF.getText().trim().isEmpty() ||
+                    motDePasseTF.getText().trim().isEmpty() ||
+                    telephoneTF.getText().trim().isEmpty() ||
+                    dateDeNaissanceTF.getText().trim().isEmpty() ||
+                    cinTF.getText().trim().isEmpty() ||
+                    adresseDomicileTF.getText().trim().isEmpty() )
+            {
+
+                // Affichez un message d'erreur ou alerte
+                showAlert("Erreur de saisie", "Tous les champs doivent être remplis.");
+                return; // Stop the method here
+            }
             // Assuming the date format in the text field is yyyy-MM-dd
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate dateDeNaissance = LocalDate.of(2000, 1, 1);
             Client newClient = new Client(
                     nameTF.getText(),
                     prenomTF.getText(),
-                    "gamma@gmail.com",
-                    "22222222",
-                    "25399797",
+                    emailTF.getText(),
+                    motDePasseTF.getText(),
+                    telephoneTF.getText(),
                     dateDeNaissance,
-                    cinTF.getText(),
-                    "ariana soghra"
+                    adresseDomicileTF.getText(),
+                    cinTF.getText()
             );
 //            newClient.setNom(nameTF.getText());
 //            newClient.setPrenom(prenomTF.getText());

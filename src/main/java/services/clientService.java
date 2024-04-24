@@ -1,10 +1,10 @@
 package services;
 
 import models.Client;
+import models.AbstractUtilisateur;
 import utils.MyDatabase;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+
+import java.sql.*;
 import java.util.List;
 
 public class clientService implements IService<Client> {
@@ -17,21 +17,39 @@ public class clientService implements IService<Client> {
 
     @Override
     public void add(Client client) throws SQLException {
-        String sql =
-            "INSERT INTO client (nom, prenom, email, mot_de_passe, telephone, date_de_naissance, cin, adresse_domicile) " +
-            "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setString(1, client.getNom());
-            preparedStatement.setString(2, client.getPrenom());
-            preparedStatement.setString(3, client.getEmail());
-            preparedStatement.setString(4, client.getMotDePasse()); // Ensure this is hashed if necessary
-            preparedStatement.setString(5, client.getTelephone());
-            preparedStatement.setDate(6, java.sql.Date.valueOf(client.getDateDeNaissance()));
-            preparedStatement.setString(7, client.getCin());
-            preparedStatement.setString(8, client.getAdresseDomicile());
+        String sqlAbstractUser = "INSERT INTO abstract_utilisateur " +
+            "(nom, prenom, email, mot_de_passe, telephone, date_de_naissance, type) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-            preparedStatement.executeUpdate();
+        String sqlClient = "INSERT INTO client (id, cin, adresse_domicile) VALUES (?, ?, ?)";
+
+        try (
+                PreparedStatement psAbstractUser = connection.prepareStatement(sqlAbstractUser, Statement.RETURN_GENERATED_KEYS);
+                PreparedStatement psClient = connection.prepareStatement(sqlClient);
+                )
+        {
+            psAbstractUser.setString(1, client.getNom());
+            psAbstractUser.setString(2, client.getPrenom());
+            psAbstractUser.setString(3, client.getEmail());
+            psAbstractUser.setString(4, client.getMotDePasse()); // Ensure this is hashed if necessary
+            psAbstractUser.setString(5, client.getTelephone());
+            psAbstractUser.setDate(6, java.sql.Date.valueOf(client.getDateDeNaissance()));
+            psAbstractUser.setString(7, "client");
+
+            psAbstractUser.executeUpdate();
+
+            ResultSet rs = psAbstractUser.getGeneratedKeys();
+            if (rs.next()) {
+                int generatedId = rs.getInt(1);  // Retrieve the generated ID
+
+                // Second part: Insert into client
+                psClient.setInt(1, generatedId);
+                psClient.setString(2, client.getCin());
+                psClient.setString(3, client.getAdresseDomicile());
+                psClient.executeUpdate();  // Don't forget to execute the update for client
+            } else {
+                throw new SQLException("Creating abstract_utilisateur failed, no ID obtained.");
+            }
         }
     }
 

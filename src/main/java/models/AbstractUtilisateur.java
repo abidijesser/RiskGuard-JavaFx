@@ -1,6 +1,6 @@
 package models;
 
-sealed public abstract class AbstractUtilisateur permits Client, Admin {
+sealed public class AbstractUtilisateur permits Client, Admin {
     private Integer id;
     private String nom;
     private String prenom;
