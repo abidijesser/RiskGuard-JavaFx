@@ -6,12 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.addUser">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.addClientController">
    <children>
-      <Button layoutX="424.0" layoutY="327.0" mnemonicParsing="false" onAction="#addUser" text="Button" />
+      <Button layoutX="424.0" layoutY="327.0" mnemonicParsing="false" onAction="#addClient" text="Button" />
       <TextField fx:id="nameTF" layoutX="150.0" layoutY="138.0" />
-      <TextField fx:id="ageTF" layoutX="150.0" layoutY="188.0" />
+      <TextField fx:id="prenomTF" layoutX="150.0" layoutY="188.0" />
+      <TextField fx:id="cinTF" layoutX="150.0" layoutY="238.0" />
       <Label layoutX="77.0" layoutY="143.0" text="Name" />
-      <Label layoutX="85.0" layoutY="200.0" text="Age" />
+      <Label layoutX="85.0" layoutY="200.0" text="Prenom" />
+      <Label layoutX="93.0" layoutY="257.0" text="CIN" />
    </children>
 </AnchorPane>

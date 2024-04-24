@@ -1,6 +1,6 @@
 package models;
 
-public abstract class AbstractUtilisateur {
+sealed public abstract class AbstractUtilisateur permits Client, Admin {
     private Integer id;
     private String nom;
     private String prenom;
@@ -8,6 +8,17 @@ public abstract class AbstractUtilisateur {
     private String motDePasse;
     private String telephone;
     private java.time.LocalDate dateDeNaissance;
+
+    public AbstractUtilisateur( String nom, String prenom, String email,
+        String motDePasse, String telephone, java.time.LocalDate dateDeNaissance) {
+
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.motDePasse = motDePasse;
+        this.telephone = telephone;
+        this.dateDeNaissance = dateDeNaissance;
+    }
 
     // Getters and Setters
     public Integer getId() {

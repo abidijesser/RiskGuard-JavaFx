@@ -2,7 +2,6 @@ package services;
 
 import models.User;
 import utils.MyDatabase;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

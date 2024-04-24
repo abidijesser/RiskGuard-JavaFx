@@ -1,10 +1,18 @@
+
+
 package models;
 
-public class Client extends AbstractUtilisateur {
-    private String cin;
-    private String adresseDomicile;
+final public class Client extends AbstractUtilisateur {
+    public String cin;
+    public String adresseDomicile;
 
-    // Getters and Setters
+    public Client(String nom, String prenom, String email, String motDePasse, String telephone ,
+                  java.time.LocalDate dateDeNaissance, String adresseDomicile, String cin) {
+        super(nom, prenom, email, motDePasse, telephone, dateDeNaissance);
+        this.adresseDomicile = adresseDomicile;
+        this.cin = cin;
+    }
+
     public String getCin() {
         return cin;
     }
@@ -21,8 +29,6 @@ public class Client extends AbstractUtilisateur {
         this.adresseDomicile = adresseDomicile;
     }
 }
-
-
 
 
 

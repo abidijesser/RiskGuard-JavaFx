@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import models.User;
 import services.UserService;
-
 import java.sql.SQLException;
 
 public class addUser {
