@@ -1,0 +1,11 @@
+.alert .dialog-pane .content {
+    -fx-background-color: green;
+}
+
+.alert .dialog-pane .header-panel {
+    -fx-background-color: green;
+}
+
+.alert .dialog-pane .button-bar {
+    -fx-background-color: green;
+}
