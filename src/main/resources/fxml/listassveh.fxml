@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assurance.assurancess.controller.ListAssVehiculeController">
+    <top>
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <!-- Champ de texte pour la recherche -->
+            <TextField fx:id="rechercheField" promptText="Recherche..." />
+            <!-- Bouton "Recherche" -->
+            <Button text="Recherche" onAction="#rechercherAssuranceVehicule" />
+            <!-- Bouton "Return" dans la partie supérieure -->
+            <Button text="Return" onAction="#returnToPreviousScene" />
+        </HBox>
+    </top>
+    <center>
+        <ListView fx:id="assuranceListView" prefHeight="300.0" prefWidth="300.0" />
+    </center>
+    <bottom>
+        <HBox spacing="10.0" alignment="CENTER">
+            <Button text="Supprimer Assurance Véhicule" onAction="#supprimerAssuranceVehicule" />
+            <Button text="Update" onAction="#updateAssuranceVehicule" />
+            <Button text="Reload" onAction="#reloadAssuranceVehicules" />
+        </HBox>
+    </bottom>
+</BorderPane>
