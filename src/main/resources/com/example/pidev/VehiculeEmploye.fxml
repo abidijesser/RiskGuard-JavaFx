@@ -34,4 +34,5 @@
             <Image url="@images/logo.png" />
         </image>
     </ImageView>
+    <Button fx:id="navigatetostatistic" layoutX="260" layoutY="410" mnemonicParsing="false" onAction="#navigateTostatistic" text=" statistics" />
 </AnchorPane>

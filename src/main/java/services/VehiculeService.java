@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class VehiculeService {
     private Connection connection;
@@ -97,11 +99,24 @@ public class VehiculeService {
 
 
 
-
-
-
-
+    public int getVehiculeCount() throws SQLException {
+        int count = 0;
+        String query = "SELECT COUNT(*) AS count FROM constatvehicule   ";
+        try (PreparedStatement statement = connection.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()) {
+            if (resultSet.next()) {
+                count = resultSet.getInt("count");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(VehiculeService.class.getName()).log(Level.SEVERE, null, ex);
+            throw ex;
+        }
+        return count;
     }
+}
+
+
+
 
 
 

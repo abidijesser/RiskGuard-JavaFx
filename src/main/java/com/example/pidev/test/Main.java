@@ -24,19 +24,17 @@ public  class Main  extends Application {
 
     public void start(Stage primaryStage) {
         try {
-            // Load the FXML file
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/employe.fxml"));
-           FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pidev/vehiculeEmploye.fxml"));
+            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pidev/hello-view.fxml"));
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("/employe.fxml"));
+
             Parent root = loader.load();
 
-            // Set up the primary stage
+
             primaryStage.setTitle("pidev");
             primaryStage.setScene(new Scene(root, 800, 600));
-
-            // Show the primary stage
             primaryStage.show();
         } catch (IOException e) {
-            // Handle any exceptions that occur during FXML loading
+
             e.printStackTrace();
         }
     }

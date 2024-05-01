@@ -11,6 +11,7 @@ module com.example.pidev {
     requires java.sql;
     requires com.almasb.fxgl.all;
     requires java.desktop;
+    requires itextpdf;
 
     opens com.example.pidev to javafx.fxml;
     exports com.example.pidev.test;

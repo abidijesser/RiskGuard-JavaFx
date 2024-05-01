@@ -8,6 +8,8 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.vieController">
 
    <children>
@@ -64,10 +66,14 @@
             <TextField fx:id="identifiantdelinformant" prefHeight="20.0" prefWidth="804.0" />
          </children>
       </VBox>
-      <Button fx:id="addButton" mnemonicParsing="false" onAction="#vaddVie" prefHeight="30.0" prefWidth="106.0" stylesheets="@css/vie.css" text="add">
-         <VBox.margin>
-            <Insets left="20.0" />
-         </VBox.margin>
-      </Button>
+      <HBox prefHeight="30.0" prefWidth="822.0" alignment="CENTER_RIGHT">
+         <Button fx:id="addButton" mnemonicParsing="false" onAction="#vaddVie" prefHeight="30.0" prefWidth="106.0" stylesheets="@css/vie.css" text="add" />
+         <Region HBox.hgrow="ALWAYS" />
+         <Button fx:id="constatvehicule" onAction="#constatvehicule" stylesheets="@css/vie.css" text="constatvehicule">
+            <VBox.margin>
+               <Insets right="20.0"/>
+            </VBox.margin>
+         </Button>
+      </HBox>
    </children>
 </VBox>

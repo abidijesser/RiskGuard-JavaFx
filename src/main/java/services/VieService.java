@@ -84,5 +84,14 @@ public class VieService {
             statement.setString(1, selectedVie.getCin());
             statement.executeUpdate();
         }
+    public int getVieCount() throws SQLException {
+        // Implement the logic to retrieve the count of Vie instances from the database
+        // For example:
+        // Assuming you have a method named getAllVies() in your VieService to get all Vie instances,
+        // you can get the count by calling size() on the returned list.
+
+        List<Vie> allVies = getAllConstatVies();
+        return allVies.size();
+    }
 
 }

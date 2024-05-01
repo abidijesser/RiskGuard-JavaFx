@@ -38,3 +38,21 @@ Label {
 .button:pressed {
     -fx-background-color: #008080; /* Darker blue color when pressed */
 }
+.button#pdf{
+    -fx-background-color: #28a745; /* Green color */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px; /* Padding */
+    -fx-border-radius: 5px; /* Rounded corners */
+}
+
+/* Styling for button hover effect */
+.button#pdf:hover {
+    -fx-background-color: #b564db; /* Darker green color on hover */
+    -fx-cursor: hand; /* Show hand cursor on hover */
+}
+
+/* Styling for button pressed effect */
+.button#pdf:pressed {
+    -fx-background-color: #1e7e34; /* Darker green color when pressed */
+}

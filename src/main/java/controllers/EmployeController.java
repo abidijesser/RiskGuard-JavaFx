@@ -1,13 +1,21 @@
 package controllers;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.Font;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import entites.Vie;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import services.VieService;
 import javafx.fxml.FXML;
+import javafx.event.ActionEvent;
 import javafx.scene.control.TableView;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
@@ -15,13 +23,35 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
+
+import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-
+import java.util.function.Predicate;
+import javafx.scene.control.Button;
 import javafx.geometry.Insets;
-
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfContentByte;
     public class EmployeController {
+        @FXML
+        private TextField search;
+        @FXML
+        private ImageView loupe;
+        @FXML
+        private  Button  navigatee;
+
+        @FXML
+        private Button pdf;
 
         @FXML
         private TableColumn<Vie, String> causededecesv; // Updated type parameter
@@ -54,13 +84,16 @@ import javafx.geometry.Insets;
         private Button update;
 
         private VieService vieService = new VieService();
-
+        private ObservableList<Vie> originalList;
 
         @FXML
-
         public void initialize() {
             // Fetch data and populate TableView
             loadData();
+
+            // Set up search functionality
+            setUpSearch();
+            navigatee.setOnAction(this::navigateToVehiculeEmploye);
         }
 
         private void loadData() {
@@ -75,12 +108,45 @@ import javafx.geometry.Insets;
 
                 // Fetch data and populate TableView
                 List<Vie> vies = vieService.getAllConstatVies();
-                ObservableList<Vie> vieObservableList = FXCollections.observableArrayList(vies);
-                liste.setItems(vieObservableList);
+                originalList = FXCollections.observableArrayList(vies);
+                liste.setItems(originalList);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
+
+        public void setUpSearch() {
+            // Listen for changes in the search TextField
+            search.textProperty().addListener((observable, oldValue, newValue) -> {
+                // Filter the original list based on the search query
+                filterTableView(newValue);
+            });
+        }
+
+        private void filterTableView(String query) {
+            // Create a predicate to filter the TableView
+            Predicate<Vie> filterPredicate = vie -> {
+                if (query == null || query.isEmpty()) {
+                    // If the search query is empty, display all items
+                    return true;
+                }
+                // Filter based on the search query
+                String lowerCaseQuery = query.toLowerCase();
+                return vie.getNom().toLowerCase().contains(lowerCaseQuery)
+                        || vie.getPrenom().toLowerCase().contains(lowerCaseQuery)
+                        || vie.getCin().toLowerCase().contains(lowerCaseQuery)
+                        || vie.getCausededecess().toLowerCase().contains(lowerCaseQuery)
+                        || vie.getDateDeces().toLowerCase().contains(lowerCaseQuery)
+                        || vie.getIdentifiantDeLinformantt().toLowerCase().contains(lowerCaseQuery);
+            };
+
+            // Filter the original list and update the TableView
+            ObservableList<Vie> filteredList = originalList.filtered(filterPredicate);
+            liste.setItems(filteredList);
+        }
+
+
+
 
         public void UpdateViee() {
             // Get the selected item from the TableView
@@ -200,4 +266,80 @@ import javafx.geometry.Insets;
                 noItemSelectedAlert.setTitle("No Selection");
                 noItemSelectedAlert.setHeaderText("No Vie Selected");
                 noItemSelectedAlert.setContentText("Please select a Vie to delete.");
-                noItemSelectedAlert.showAndWait();}}}
+                noItemSelectedAlert.showAndWait();}}
+        public void navigateToVehiculeEmploye(ActionEvent event) {
+            try {
+                // Load the FXML file for VehiculeEmploye
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pidev/vehiculeEmploye.fxml"));
+                Parent root = loader.load();
+
+                // Create a new scene with the loaded FXML file
+                Scene scene = new Scene(root);
+
+                // Get the current stage
+                Stage stage = (Stage) navigatee.getScene().getWindow();
+
+                // Set the new scene
+                stage.setScene(scene);
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+                // Handle exception
+            }
+        }
+
+
+        public void generatePDF(ActionEvent event) {
+            // Get the selected item from the TableView
+            Vie selectedVie = liste.getSelectionModel().getSelectedItem();
+            if (selectedVie != null) {
+                // Generate PDF for the selected Vie
+                try {
+                    Document document = new Document();
+                    PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("VieDetails.pdf"));
+                    document.open();
+
+                    // Add title with custom font and color
+                    Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 24, BaseColor.BLUE); // Title color: Blue
+                    Paragraph title = new Paragraph("Constat vie:", titleFont);
+                    title.setAlignment(Paragraph.ALIGN_CENTER);
+                    document.add(title);
+
+                    // Add other information with formatting and color
+                    Font normalFont = FontFactory.getFont(FontFactory.HELVETICA, 12, BaseColor.BLACK); // Text color: Black
+                    Paragraph nom = new Paragraph("Nom: " + selectedVie.getNom(), normalFont);
+                    Paragraph prenom = new Paragraph("Prenom: " + selectedVie.getPrenom(), normalFont);
+                    Paragraph cin = new Paragraph("CIN: " + selectedVie.getCin(), normalFont);
+                    Paragraph causeDeDeces = new Paragraph("Cause de deces: " + selectedVie.getCausededecess(), normalFont);
+                    Paragraph dateDeDeces = new Paragraph("Date de deces: " + selectedVie.getDateDeces(), normalFont);
+                    Paragraph identifiantInformant = new Paragraph("Identifiant de l'informant: " + selectedVie.getIdentifiantDeLinformantt(), normalFont);
+                    document.add(nom);
+                    document.add(prenom);
+                    document.add(cin);
+                    document.add(causeDeDeces);
+                    document.add(dateDeDeces);
+                    document.add(identifiantInformant);
+
+                    document.close();
+
+                    // Open the PDF file in the default PDF viewer
+                    File file = new File("VieDetails.pdf");
+                    Desktop.getDesktop().open(file);
+
+                    // Show a success message or perform any other action
+                    System.out.println("PDF generated successfully.");
+                } catch (DocumentException | FileNotFoundException e) {
+                    e.printStackTrace();
+                    // Handle exception
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    // Handle exception
+                }
+            } else {
+                // Show a warning if no item is selected
+                Alert noItemSelectedAlert = new Alert(Alert.AlertType.WARNING);
+                noItemSelectedAlert.setTitle("No Selection");
+                noItemSelectedAlert.setHeaderText("No Vie Selected");
+                noItemSelectedAlert.setContentText("Please select a Vie to generate PDF.");
+                noItemSelectedAlert.showAndWait();
+            }}}

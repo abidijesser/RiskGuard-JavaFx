@@ -3,7 +3,11 @@ package controllers;
 import entites.Vehicule;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Dialog;
@@ -13,17 +17,21 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.Pair;
+import org.w3c.dom.Document;
 import services.VehiculeService;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.awt.*;
+import java.io.FileOutputStream;
 import java.net.MalformedURLException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
+import entites.Vie;
 
 public class VehiculeEmployeController {
     @FXML
@@ -72,6 +80,8 @@ public class VehiculeEmployeController {
 
     @FXML
     private Button updateve;
+    @FXML
+    private Button navigatetostatistic;
 
     private VehiculeService vehiculeService;
 
@@ -121,7 +131,7 @@ public class VehiculeEmployeController {
                 };
             }
         });
-
+        navigatetostatistic.setOnAction(this::navigateTostatistic);
         // Load data into the table view
         try {
             loadData();
@@ -150,12 +160,11 @@ public class VehiculeEmployeController {
             return;
         }
 
-        // Open a dialog for updating vehicle information
         Dialog<Vehicule> dialog = new Dialog<>();
         dialog.setTitle("Update Vehicle Information");
         dialog.setHeaderText("Enter the updated information:");
 
-        // Set the button types
+
         ButtonType updateButtonType = new ButtonType("Update", ButtonBar.ButtonData.OK_DONE);
         dialog.getDialogPane().getButtonTypes().addAll(updateButtonType, ButtonType.CANCEL);
 
@@ -272,4 +281,30 @@ public class VehiculeEmployeController {
                 errorAlert.showAndWait();
             }
         }
-    }}
+    }
+
+    public void navigateTostatistic(ActionEvent event) {
+        try {
+            // Load the FXML file for VehiculeEmploye
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pidev/statistic.fxml"));
+            Parent root = loader.load();
+
+            // Create a new scene with the loaded FXML file
+            Scene scene = new Scene(root);
+
+            // Get the current stage
+            Stage stage = (Stage) navigatetostatistic.getScene().getWindow();
+
+            // Set the new scene
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle exception
+        }}
+
+    }
+
+
+
+

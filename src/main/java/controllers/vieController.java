@@ -1,11 +1,16 @@
 package controllers;
 
 import entites.Vie;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Tooltip;
+import javafx.stage.Stage;
 import services.VieService;
 
 
@@ -33,6 +38,8 @@ public class vieController  {
 
      @FXML
      private Button addButton;
+    @FXML
+    private Button constatvehicule;
 
      private VieService vieService;
 
@@ -118,4 +125,24 @@ public class vieController  {
         // Set the Tooltip above the text field
         tooltip.setAutoHide(true);
         tooltip.show(field, screenX, screenY - tooltip.getHeight());
-    }}
+    }
+
+    public void constatvehicule(ActionEvent event) {
+        try {
+            // Load the FXML file for VehiculeEmploye
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pidev/vehicule.fxml"));
+            Parent root = loader.load();
+
+            // Create a new scene with the loaded FXML file
+            Scene scene = new Scene(root);
+
+            // Get the current stage
+            Stage stage = (Stage) constatvehicule.getScene().getWindow();
+
+            // Set the new scene
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle exception
+        }}}
