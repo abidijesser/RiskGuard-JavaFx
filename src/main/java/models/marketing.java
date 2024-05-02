@@ -1,31 +1,47 @@
 package models;
 
-import java.time.LocalDate;
-import java.util.Date;
+import java.sql.Date; // Correct import for java.sql.Date
+import java.time.LocalDate; // Used for conversions between LocalDate and java.sql.Date
 
 public class marketing {
     private Long id;
     private String titre;
     private String objectif;
     private Double budget;
-    private Date dateDebut;
-    private Date dateFin;
+    private Date dateDebut; // Using java.sql.Date directly
+    private Date dateFin; // Using java.sql.Date directly
+    private categorie category;
+    private String imagePath;  // Field to store the image path
+    private String status;
 
-    public marketing(){}
+    public String getStatus() {
+        return status;
+    }
 
-    // Constructor
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public categorie getCategory() {
+        return category;
+    }
+
+    public void setCategory(categorie category) {
+        this.category = category;
+    }
+
+    public marketing() {}
+
+    // Constructor converting LocalDate to java.sql.Date
     public marketing(String titre, String objectif, double budget, LocalDate dateDebut, LocalDate dateFin) {
         this.titre = titre;
         this.objectif = objectif;
         this.budget = budget;
-        // Converting LocalDate to java.sql.Date
-        this.dateDebut = java.sql.Date.valueOf(dateDebut);
-        this.dateFin = java.sql.Date.valueOf(dateFin);
+        this.dateDebut = Date.valueOf(dateDebut); // Convert LocalDate to java.sql.Date
+        this.dateFin = Date.valueOf(dateFin);     // Convert LocalDate to java.sql.Date
+
 
     }
-
-
-
 
     // Getters and Setters
     public int getId() {
@@ -60,26 +76,31 @@ public class marketing {
         this.budget = budget;
     }
 
-    public java.sql.Date getDateDebut() {
-        return (java.sql.Date) dateDebut;
+    public Date getDateDebut() {
+        return dateDebut;
     }
 
     public void setDateDebut(Date dateDebut) {
         this.dateDebut = dateDebut;
     }
 
-    public java.sql.Date getDateFin() {
-        return (java.sql.Date) dateFin;
+    public Date getDateFin() {
+        return dateFin;
     }
 
     public void setDateFin(Date dateFin) {
         this.dateFin = dateFin;
     }
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 
 
 
-
-    // Override toString method for easy printing of Marketing object details
     @Override
     public String toString() {
         return "marketing{" +
@@ -89,7 +110,7 @@ public class marketing {
                 ", budget=" + budget +
                 ", dateDebut=" + dateDebut +
                 ", dateFin=" + dateFin +
+
                 '}';
     }
 }
-

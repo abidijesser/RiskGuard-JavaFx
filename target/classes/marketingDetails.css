@@ -1,0 +1,49 @@
+.root {
+    -fx-background-image: url('image/benjamin-cheng-TbXBPyLUK9E-unsplash.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2e3a49;
+}
+
+.text-field, .text-area {
+    -fx-font-size: 12px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 4px;
+    -fx-padding: 4px;
+}
+
+.text-area {
+    -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+}
+
+.list-view {
+    -fx-background-color: white, #e2e2e5;
+    -fx-background-insets: 0, 1;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 5px;
+}
+
+.button {
+    -fx-background-color: linear-gradient(#4c87eb, #2e4ba7), linear-gradient(#5c9fd9, #507dbc), linear-gradient(#8db1e2, #739cd1);
+    -fx-background-radius: 5px;
+    -fx-background-insets: 0, 1, 2;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 3, 0.0, 0, 1);
+    -fx-font-size: 14px;
+    -fx-padding: 5px 20px;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#6ea1f1, #3b60e4), linear-gradient(#7db9ea, #629ad8), linear-gradient(#a4c8f0, #8cafd9);
+}
+
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 10, 0.5, 0, 0);
+}

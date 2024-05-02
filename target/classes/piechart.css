@@ -1,0 +1,7 @@
+/* AnchorPane with background image */
+.anchor-pane {
+    -fx-background-image: url("image/backgroud.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}

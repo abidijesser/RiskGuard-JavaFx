@@ -28,6 +28,13 @@ public class MyDatabase {
     }
 
     public static Connection getConnection() {
+        try {
+            if (connection == null || connection.isClosed()) {
+                instance = new MyDatabase();
+            }
+        } catch (SQLException e) {
+            System.err.println("Failed to check connection status: " + e.getMessage());
+        }
         return connection;
     }
 }

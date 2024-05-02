@@ -4,9 +4,19 @@ public class categorie {
     private int id;
     private String name;
 
+    // Constructor with parameters
     public categorie(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    // Constructor with only name parameter
+    public categorie(String name) {
+        this.name = name;
+    }
+
+    public categorie() {
+
     }
 
     // Getters and setters
