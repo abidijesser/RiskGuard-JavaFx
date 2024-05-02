@@ -1,0 +1,48 @@
+/* stylesheet.css */
+
+/* VBox style */
+.vbox {
+    -fx-background-color: #f9f9f9; /* Light gray background */
+}
+
+/* Label style */
+.label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333; /* Dark gray text color */
+}
+
+/* TextField style */
+.text-field {
+    -fx-background-color: #ffffff; /* White background */
+    -fx-border-color: #cccccc; /* Light gray border */
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px; /* Rounded corners */
+    -fx-prompt-text-fill: #999999; /* Light gray prompt text */
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+/* DatePicker style */
+.date-picker {
+    -fx-prompt-text-fill: #999999; /* Light gray prompt text */
+}
+
+/* Button style */
+.button {
+    -fx-background-color: #0000ffff; /* Blue background */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-border-radius: 3px; /* Rounded corners */
+    -fx-padding: 8px 16px;
+}
+
+.button:hover {
+    -fx-background-color: #0000ffff; /* Darker blue on hover */
+}
+
+/* HBox style for buttons */
+.hbox {
+    -fx-alignment: CENTER; /* Center align buttons */
+}

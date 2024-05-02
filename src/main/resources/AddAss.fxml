@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.assurance.assurancess.controller.AssuranceController"
+      prefWidth="300" prefHeight="200" alignment="CENTER"
+      >
+    <stylesheets>
+        <URL value="@css/AddAss1.css"></URL>
+    </stylesheets>
+
+    <Label text="Ajouter une assurance" styleClass="title-label" />
+
+    <VBox spacing="10" alignment="CENTER">
+        <HBox spacing="10">
+            <Label text="Nom du pack:" styleClass="label" />
+            <TextField fx:id="nomPackField" styleClass="text-field" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Promotion du pack:" styleClass="label" />
+            <TextField fx:id="promotionPackField" styleClass="text-field" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Description:" styleClass="label" />
+            <TextField fx:id="descriptionField" styleClass="text-field" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Type du pack:" styleClass="label" />
+            <TextField fx:id="typePackField" styleClass="text-field" />
+        </HBox>
+
+        <Button text="Ajouter" onAction="#addAssurance" styleClass="button"  />
+    </VBox>
+</VBox>

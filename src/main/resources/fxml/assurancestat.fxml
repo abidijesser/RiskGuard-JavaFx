@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+
+<?import java.net.URL?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.assurance.assurancess.controller.Assurancestat"
+            prefHeight="400.0" prefWidth="600.0">
+    <stylesheets>
+        <URL value="@css/assurancestat.css"></URL>
+    </stylesheets>
+    <Button layoutX="7.0" layoutY="8.0" onAction="#goback" text="&lt;" />
+
+    <BarChart fx:id="barChart" layoutX="50.0" layoutY="50.0">
+        <xAxis>
+            <CategoryAxis fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis fx:id="yAxis" />
+        </yAxis>
+    </BarChart>
+
+</AnchorPane>

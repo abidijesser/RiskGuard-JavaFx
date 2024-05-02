@@ -1,0 +1,43 @@
+/* style.css */
+
+/* Styles pour AnchorPane */
+.anchor-pane {
+    -fx-background-color: #f5f5f5; /* Couleur de fond */
+}
+
+/* Styles pour PieChart */
+#pieChart {
+    -fx-background-color: transparent; /* Couleur de fond transparente */
+}
+
+/* Styles pour Label */
+#top3Label {
+    -fx-font-size: 14pt; /* Taille de la police */
+    -fx-font-weight: bold; /* Poids de la police */
+    -fx-text-fill: #FFFFFF; /* Couleur du texte */
+    -fx-background-color: #007bff; /* Couleur de fond */
+    -fx-padding: 5px; /* Espacement interne */
+    -fx-border-radius: 5px; /* Rayon des coins arrondis */
+}
+
+/* Styles pour Button */
+.button {
+    -fx-background-color: #007bff; /* Couleur de fond */
+    -fx-text-fill: white; /* Couleur du texte */
+    -fx-font-weight: bold; /* Poids de la police */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-padding: 8px 16px; /* Espacement interne */
+    -fx-border-radius: 3px; /* Rayon des coins arrondis */
+}
+
+/* Styles pour le bouton "Back" */
+.button#backButton {
+    -fx-background-color: transparent; /* Couleur de fond transparente */
+    -fx-text-fill: #007bff; /* Couleur du texte bleue */
+    -fx-font-size: 16px; /* Taille de la police */
+}
+
+/* Style pour les boutons lorsqu'ils sont survolés */
+.button:hover {
+    -fx-background-color: #0056b3; /* Couleur de fond plus foncée */
+}
