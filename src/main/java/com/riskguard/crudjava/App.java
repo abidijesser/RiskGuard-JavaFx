@@ -7,13 +7,14 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         // Charger l'icône à partir d'un fichier image
         Image icon = new Image(getClass().getResourceAsStream("/images/ass.png"));
 
-        Parent parent = FXMLLoader.load(getClass().getResource("/Fxml/Front.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("/Fxml/Back.fxml"));
         Scene scene = new Scene(parent);
 
         // Ajouter l'icône à la fenêtre principale

@@ -7,6 +7,16 @@ public class Reponse {
         private String id_reclamation ;
         private String contenu ;
         private Date date;
+    private String description; // Nouvelle propriété
+
+    // Getter et Setter
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public int getId_reponse() {
         return id_reponse;

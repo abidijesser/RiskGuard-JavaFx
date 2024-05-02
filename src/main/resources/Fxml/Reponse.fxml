@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="889.0" styleClass="root" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.riskguard.crudjava.ReponseController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="989.0" styleClass="root" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.riskguard.crudjava.ReponseController">
     <children>
         <VBox prefHeight="532.0" prefWidth="199.0">
             <children>
@@ -57,6 +57,17 @@
                         <Image url="@../images/logo.png" />
                      </image>
                   </ImageView>
+                        <Button fx:id="btn_statistique" layoutX="7.0" layoutY="310.0" mnemonicParsing="false" onAction="#gostatistique" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Statistique    " textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="26.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/statistique.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="btn_downloadPDF" layoutX="47.0" layoutY="417.0" onAction="#downloadResponsePDF" text="Télécharger PDF" />
                     </children>
                 </AnchorPane>
             </children>
@@ -142,14 +153,15 @@
                                 </ButtonBar>
                             </children>
                         </Pane>
-                        <Pane layoutX="1.0" layoutY="176.0" prefHeight="266.0" prefWidth="690.0">
+                        <Pane layoutX="1.0" layoutY="172.0" prefHeight="270.0" prefWidth="778.0">
                             <children>
-                                <TableView fx:id="table_reponse" layoutX="19.0" layoutY="5.0" onMouseClicked="#getData" prefHeight="257.0" prefWidth="663.0">
+                                <TableView fx:id="table_reponse" layoutX="19.0" layoutY="5.0" onMouseClicked="#getData" prefHeight="257.0" prefWidth="756.0">
                                     <columns>
-                                        <TableColumn fx:id="col_idrep" prefWidth="99.20000076293945" text="ID Reponse" />
-                                        <TableColumn fx:id="col_idrec" prefWidth="132.0" text="ID Reclamation" />
-                                        <TableColumn fx:id="col_contenu" prefWidth="294.40000915527344" text="Reponse" />
-                                        <TableColumn fx:id="col_date" minWidth="0.0" prefWidth="136.0" text="Date du réponse" />
+                                        <TableColumn fx:id="col_idrep" prefWidth="65.0" text="ID Rep" />
+                                        <TableColumn fx:id="col_idrec" prefWidth="65.0" text="ID Rec" />
+                                        <TableColumn fx:id="col_description" prefWidth="260.0" text="Reclamation" />
+                                        <TableColumn fx:id="col_contenu" prefWidth="230.0" text="Reponse" />
+                                        <TableColumn fx:id="col_date" minWidth="0.0" prefWidth="140.0" text="Date du réponse" />
                                     </columns>
                                 </TableView>
                             </children>

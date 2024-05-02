@@ -1,5 +1,5 @@
 package com.riskguard.crudjava;
-
+import com.riskguard.crudjava.EmailSender;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,6 +10,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -17,6 +19,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -25,7 +29,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
-import javafx.scene.chart.PieChart;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Image;
+
 
 
 
@@ -64,7 +74,11 @@ public class ReponseController implements Initializable {
     private TableColumn<Reponse, String> col_idrec;
 
     @FXML
+    private TableColumn<Reponse, String> col_description;
+
+    @FXML
     private TableColumn<Reponse, String> col_contenu;
+
 
     @FXML
     private TableColumn<Reponse, Date> col_date;
@@ -132,7 +146,9 @@ public class ReponseController implements Initializable {
 
     public ObservableList<Reponse> getReponses() {
         ObservableList<Reponse> reponses = FXCollections.observableArrayList();
-        String query = "SELECT id_reponse, id_reclamation, date, contenu  FROM reponse";
+        String query = "SELECT r.id_reponse, r.id_reclamation, r.date, r.contenu, rc.description " +
+                "FROM reponse r " +
+                "JOIN reclamation rc ON r.id_reclamation = rc.id_reclamation";
         con = DBConnexion.getCon();
         try {
             st = con.prepareStatement(query);
@@ -143,6 +159,7 @@ public class ReponseController implements Initializable {
                 rep.setId_reclamation(rs.getString("id_reclamation"));
                 rep.setDate(rs.getDate("date"));
                 rep.setContenu(rs.getString("contenu"));
+                rep.setDescription(rs.getString("description")); // Récupérer la description
                 reponses.add(rep);
             }
         } catch (SQLException e) {
@@ -150,6 +167,7 @@ public class ReponseController implements Initializable {
         }
         return reponses;
     }
+
 
     public void initData(Reclamation selectedReclamation) {
         tf_idreclamation.setText(String.valueOf(selectedReclamation.getId_reclamation()));
@@ -219,7 +237,8 @@ public class ReponseController implements Initializable {
             st.executeUpdate();
 
             showReponse();
-
+            // Send email notification to the client
+            sendEmailNotification(id_reclamation);
             // Show a success message
             Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
             successAlert.setTitle("Success");
@@ -240,6 +259,91 @@ public class ReponseController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    private void sendEmailNotification(String id_reclamation) {
+        // Get client email, client name, response, and description from the database using id_reclamation
+        String clientEmail = getClientEmail(id_reclamation);
+        String clientName = getClientName(id_reclamation);
+        String response = getResponseContent(id_reclamation);
+        String description = getReclamationDescription(id_reclamation);
+
+        // Prepare email content
+        String subject = "Notification de réponse à votre réclamation";
+        String content = "Cher " + clientName + ", \n\nUne réponse a été ajoutée à votre réclamation :\n\n" +
+                "Description de la réclamation : " + description + "\n\nRéponse : " + response;
+
+        // Send email
+        EmailSender.sendEmail(clientEmail, subject, content);
+    }
+
+
+
+    private String getClientEmail(String id_reclamation) {
+        // Query the database to get the client email using the id_reclamation
+        String query = "SELECT email_client FROM reclamation WHERE id_reclamation = ?";
+        try {
+            st = con.prepareStatement(query);
+            st.setString(1, id_reclamation);
+            rs = st.executeQuery();
+            if (rs.next()) {
+                return rs.getString("email_client");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+    private String getReclamationDescription(String id_reclamation) {
+        // Query the database to get the description of the reclamation using the id_reclamation
+        String query = "SELECT description FROM reclamation WHERE id_reclamation = ?";
+        try {
+            st = con.prepareStatement(query);
+            st.setString(1, id_reclamation);
+            rs = st.executeQuery();
+            if (rs.next()) {
+                return rs.getString("description");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+
+    private String getClientName(String id_reclamation) {
+        // Query the database to get the client name using the id_reclamation
+        String query = "SELECT nom_client FROM reclamation WHERE id_reclamation = ?";
+        try {
+            st = con.prepareStatement(query);
+            st.setString(1, id_reclamation);
+            rs = st.executeQuery();
+            if (rs.next()) {
+                return rs.getString("nom_client");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+    private String getResponseContent(String id_reclamation) {
+        // Query the database to get the response content using the id_reclamation
+        String query = "SELECT contenu FROM reponse WHERE id_reclamation = ?";
+        try {
+            st = con.prepareStatement(query);
+            st.setString(1, id_reclamation);
+            rs = st.executeQuery();
+            if (rs.next()) {
+                return rs.getString("contenu");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+
+
 
 
     @FXML
@@ -324,6 +428,7 @@ public class ReponseController implements Initializable {
         col_idrec.setCellValueFactory(new PropertyValueFactory<>("id_reclamation"));
         col_date.setCellValueFactory(new PropertyValueFactory<>("date"));
         col_contenu.setCellValueFactory(new PropertyValueFactory<>("contenu"));
+        col_description.setCellValueFactory(new PropertyValueFactory<>("description"));
     }
 
 
@@ -368,6 +473,104 @@ public class ReponseController implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void gostatistique(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/statistique.fxml"));
+            Parent root = loader.load();
+
+            // Access the current stage from any node in the scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    private void generateResponsePDF(String clientName, String description, String responseContent) {
+        Document document = new Document();
+        try {
+            // Spécifier le chemin du fichier PDF de sortie avec le nom du client
+            String fileName = clientName + "_response_details.pdf";
+            PdfWriter.getInstance(document, new FileOutputStream(fileName));
+
+            // Ouvrir le document
+            document.open();
+
+            // Ajouter une zone vide pour déplacer le contenu vers le centre de la page
+            document.add(new Paragraph(" "));
+
+            // Ajouter le logo (remplacez l'URL par le chemin de votre propre logo)
+            Image logo = Image.getInstance("C:/Users/ghass/IdeaProjects/crudJava/src/main/resources/images/logo.png");
+            logo.setAlignment(Image.ALIGN_CENTER); // Aligner le logo au centre
+            logo.scaleToFit(200, 100); // Ajuster la taille du logo
+            document.add(logo);
+
+            // Ajouter les informations de réponse au document PDF
+            Paragraph clientParagraph = new Paragraph("Nom du client: " + clientName);
+            clientParagraph.setAlignment(Paragraph.ALIGN_CENTER); // Aligner le texte au centre
+            document.add(clientParagraph);
+
+            Paragraph descriptionParagraph = new Paragraph("La réclamation soumise : " + description);
+            descriptionParagraph.setAlignment(Paragraph.ALIGN_CENTER); // Aligner le texte au centre
+            document.add(descriptionParagraph);
+
+            Paragraph responseParagraph = new Paragraph("Réponse à la réclamation: " + responseContent);
+            responseParagraph.setAlignment(Paragraph.ALIGN_CENTER); // Aligner le texte au centre
+            document.add(responseParagraph);
+
+            // Fermer le document
+            document.close();
+
+            // Afficher un message de réussite
+            System.out.println("Le fichier PDF a été généré avec succès.");
+
+            // Ouvrir automatiquement le PDF après la génération
+            Desktop.getDesktop().open(new File(fileName));
+
+        } catch (IOException | DocumentException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    @FXML
+    void downloadResponsePDF(ActionEvent event) {
+        // Vérifier si un élément est sélectionné dans le tableau
+        if (table_reponse.getSelectionModel().isEmpty()) {
+            // Afficher un message d'erreur si aucun élément n'est sélectionné
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText(null);
+            alert.setContentText("Aucune réponse sélectionnée. Veuillez sélectionner une réponse à télécharger.");
+            alert.showAndWait();
+            return; // Sortir de la méthode
+        }
+
+        // Récupérer les informations de réponse
+        String id_reclamation = tf_idreclamation.getText();
+        String clientName = getClientName(id_reclamation);
+        String response = getResponseContent(id_reclamation);
+        String description = getReclamationDescription(id_reclamation);
+
+        // Générer le PDF avec les informations de réponse
+        generateResponsePDF(clientName, description, response);
+
+        // Afficher un message indiquant que le téléchargement a réussi
+        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+        successAlert.setTitle("Téléchargement réussi");
+        successAlert.setHeaderText(null);
+        successAlert.setContentText("Le fichier PDF a été téléchargé avec succès.");
+        successAlert.showAndWait();
+    }
+
+
 
 
 }

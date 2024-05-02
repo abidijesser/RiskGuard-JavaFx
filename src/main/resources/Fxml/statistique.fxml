@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,11 +12,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="989.0" styleClass="root" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.riskguard.crudjava.BackController">
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="889.0" styleClass="root" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.riskguard.crudjava.StatController">
     <children>
         <VBox prefHeight="532.0" prefWidth="199.0">
             <children>
-                <AnchorPane fx:id="side_ankerpane" prefHeight="564.0" prefWidth="187.0" styleClass="side_ankerpane" stylesheets="@../CSS/styles.css">
+                <AnchorPane fx:id="side_ankerpane" prefHeight="565.0" prefWidth="199.0" styleClass="side_ankerpane" stylesheets="@../CSS/styles.css">
                     <children>
                         <Button fx:id="btn_reclamation" layoutX="7.0" layoutY="179.0" mnemonicParsing="false" onAction="#goreclamation" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Reclamation" textAlignment="CENTER" textFill="WHITE">
                             <font>
@@ -34,8 +33,6 @@
                                 <Font name="Century Gothic Bold" size="15.0" />
                             </font>
                         </Button>
-
-
                         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="22.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../images/reponse.png" />
@@ -45,7 +42,7 @@
                             <image>
                                 <Image url="@../images/logo.png" />
                             </image></ImageView>
-                        <Button fx:id="btn_statistique" layoutX="7.0" layoutY="310.0" mnemonicParsing="false" onAction="#gostatistique" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Statistique    " textAlignment="CENTER" textFill="WHITE">
+                        <Button fx:id="btn_statistique" layoutX="7.0" layoutY="310.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Statistique    " textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font name="Century Gothic Bold" size="15.0" />
                             </font>
@@ -53,6 +50,11 @@
                         <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="26.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../images/statistique.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="67.0" layoutX="76.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../Downloads/438267351_1591128661739309_1152519402894951401_n.jpg" />
                             </image>
                         </ImageView>
                     </children>
@@ -63,17 +65,7 @@
             <children>
                 <Pane prefHeight="80.0" prefWidth="690.0">
                     <children>
-                        <TextField fx:id="txt_serach" layoutX="447.0" layoutY="26.0" prefHeight="28.0" prefWidth="197.0" promptText="Search ...">
-                            <font>
-                                <Font name="Century Gothic Bold Italic" size="14.0" />
-                            </font>
-                        </TextField>
-                        <ImageView fitHeight="23.0" fitWidth="30.0" layoutX="424.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../images/search.png" />
-                            </image>
-                        </ImageView>
-                        <Text fill="#eae5e5" layoutX="59.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="RiskGuard Reclamations :" wrappingWidth="339.13671875">
+                        <Text fill="#eae5e5" layoutX="59.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="RiskGuard Statistiques concernant l'etat des réclamations soumises :" wrappingWidth="557.5366821289062">
                             <font>
                                 <Font name="Century Gothic Bold" size="22.0" />
                             </font>
@@ -85,29 +77,26 @@
                         </ImageView>
                     </children>
                 </Pane>
-                <AnchorPane layoutX="-2.0" layoutY="122.0" prefHeight="440.0" prefWidth="690.0">
+                <AnchorPane layoutX="-2.0" layoutY="84.0" prefHeight="478.0" prefWidth="690.0">
                     <children>
-                        <Pane layoutX="1.0" layoutY="-46.0" prefHeight="95.0" prefWidth="690.0">
+                        <HBox layoutX="155.0" layoutY="24.0" prefHeight="429.0" prefWidth="327.0">
                             <children>
-                                <Button fx:id="btn_reprec" layoutX="283.0" layoutY="2.0" mnemonicParsing="false" onAction="#reponseRec" prefHeight="25.0" prefWidth="124.0" text="Répondre" />
+                                <Pane prefHeight="404.0" prefWidth="315.0" styleClass="inner_pane" stylesheets="@../CSS/styles.css">
+                                    <children>
+                                        <PieChart fx:id="PieChart" layoutX="15.0" layoutY="44.0" prefHeight="303.0" prefWidth="287.0" stylesheets="@../CSS/styles.css" titleSide="BOTTOM">
+                                            <styleClass>
+                                                <String fx:value="symbol" />
+                                                <String fx:value="chart-title" />
+                                                <String fx:value="axis-major-tick-mark" />
+                                                <String fx:value="axis-minor-tick-mark" />
+                                                <String fx:value="chart-pie-label" />
+                                            </styleClass></PieChart>
+                                    </children>
+                                </Pane>
+                                
                             </children>
-                        </Pane>
-                        <Pane layoutX="1.0" layoutY="116.0" prefHeight="60.0" prefWidth="690.0" />
-                        <Pane layoutX="3.0" layoutY="173.0" prefHeight="266.0" prefWidth="690.0">
-                            <children>
-                                <TableView fx:id="table" layoutX="4.0" layoutY="-178.0" prefHeight="440.0" prefWidth="777.0">
-                                    <columns>
-                                        <TableColumn fx:id="colid" prefWidth="50.399962425231934" text="ID_REC" />
-                                        <TableColumn fx:id="coldesc" prefWidth="216.79999160766602" text="Reclamation" />
-                                        <TableColumn fx:id="colnom" prefWidth="106.4000244140625" text="nom_client" />
-                                        <TableColumn fx:id="colemail" minWidth="0.0" prefWidth="193.5999755859375" text="Email" />
-                                        <TableColumn fx:id="colnum" minWidth="0.0" prefWidth="93.5999755859375" text="Num_tel" />
-                                        <TableColumn fx:id="coletat" minWidth="0.0" prefWidth="112.0" text="Etat" />
-
-                                    </columns>
-                                </TableView>
-                            </children>
-                        </Pane>
+                        </HBox>
+                        <HBox layoutX="4.0" layoutY="363.0" prefHeight="114.0" prefWidth="684.0" />
                     </children>
                 </AnchorPane>
             </children>

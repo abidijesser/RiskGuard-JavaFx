@@ -29,6 +29,9 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.util.Callback;
 
 public class BackController implements Initializable {
 
@@ -97,7 +100,32 @@ public class BackController implements Initializable {
         txt_serach.textProperty().addListener((observable, oldValue, newValue) -> {
             searchReclamation(newValue.trim().toLowerCase());
         });
+        // Appliquer une cell factory personnalisée pour la colonne Etat
+        coletat.setCellFactory(new Callback<TableColumn<Reclamation, String>, TableCell<Reclamation, String>>() {
+            @Override
+            public TableCell<Reclamation, String> call(TableColumn<Reclamation, String> reclamationStringTableColumn) {
+                return new TableCell<>() {
+                    @Override
+                    protected void updateItem(String etat, boolean empty) {
+                        super.updateItem(etat, empty);
+                        if (empty || etat == null) {
+                            setText(null);
+                            setStyle("");
+                        } else {
+                            setText(etat);
+                            // Appliquer un style CSS si l'état est "en attente"
+                            if (etat.equalsIgnoreCase("en attente")) {
+                                setTextFill(javafx.scene.paint.Color.RED);
+                            } else {
+                                setTextFill(javafx.scene.paint.Color.BLACK);
+                            }
+                        }
+                    }
+                };
+            }
+        });
     }
+
 
     private void searchReclamation(String searchQuery) {
         // Create a filtered list to hold the filtered reclamation objects
@@ -142,7 +170,7 @@ public class BackController implements Initializable {
                 rec.setId_reclamation(rs.getInt("id_reclamation"));
                 rec.setDescription(rs.getString("description"));
                 rec.setNom_client(rs.getString("nom_client"));
-                rec.setEmail_client(rs.getString("email_client"));
+                rec.setEmail_client(rs.getString("email_client")); // Ajoutez cette ligne pour récupérer l'e-mail du client
                 rec.setNum_tel(rs.getString("num_tel"));
                 rec.setEtat(rs.getString("etat"));
                 reclamations.add(rec);
@@ -152,6 +180,7 @@ public class BackController implements Initializable {
         }
         return reclamations;
     }
+
 
     public void showReclamation() {
         ObservableList<Reclamation> list = getReclamations();
@@ -234,7 +263,22 @@ public class BackController implements Initializable {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void gostatistique(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/statistique.fxml"));
+            Parent root = loader.load();
 
+            // Access the current stage from any node in the scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 

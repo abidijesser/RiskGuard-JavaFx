@@ -1,6 +1,7 @@
 package com.riskguard.crudjava;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -21,8 +22,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.geometry.Pos;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 public class FrontController implements Initializable {
     Connection con = null;
@@ -35,9 +46,11 @@ public class FrontController implements Initializable {
 
     @FXML
     private Button btnMod;
-
+    @FXML
+    private Button btnTri;
     @FXML
     private Button btnRec;
+
 
     @FXML
     private Button btnSup;
@@ -234,6 +247,12 @@ public class FrontController implements Initializable {
             successAlert.setHeaderText("Réclamation ajoutée avec succès");
             successAlert.setContentText("La réclamation a été ajoutée avec succès à la base de données.");
             successAlert.showAndWait();
+            // Insertion réussie, affichage de la notification
+            Notifications notifications = Notifications.create();
+            notifications.text("Réclamation ajoutée avec succès");
+            notifications.title("Succès");
+            notifications.hideAfter(Duration.seconds(4));
+            notifications.show();
             clear();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -377,6 +396,63 @@ public class FrontController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    // Déclarations des éléments de l'interface utilisateur
+    @FXML
+    private ComboBox<String> cmbCritereTri;
+
+    @FXML
+    private RadioButton radioCroissant;
+
+    @FXML
+    private RadioButton radioDecroissant;
+
+    // Groupe pour les boutons radio
+    @FXML
+    private ToggleGroup toggleGroup;
+
+    // Méthode appelée lors du clic sur le bouton de tri
+    @FXML
+    void trierReclamations(ActionEvent event) {
+        // Récupérer le critère de tri sélectionné
+        String critere = cmbCritereTri.getValue();
+
+        // Récupérer l'ordre de tri sélectionné
+        boolean croissant = radioCroissant.isSelected();
+
+        // Trier les réclamations en fonction du critère et de l'ordre de tri sélectionnés
+        trierReclamationsAvancee(critere, croissant);
+    }
+
+    // Méthode pour trier les réclamations en fonction du critère et de l'ordre de tri sélectionnés
+    private void trierReclamationsAvancee(String critere, boolean croissant) {
+        // Récupérer la liste des réclamations depuis la table
+        ObservableList<Reclamation> reclamations = table.getItems();
+
+        // Utiliser un comparateur personnalisé en fonction du critère sélectionné
+        Comparator<Reclamation> comparator = null;
+        switch (critere) {
+            case "Nom du client":
+                comparator = Comparator.comparing(Reclamation::getNom_client);
+                break;
+            case "Email":
+                comparator = Comparator.comparing(Reclamation::getEmail_client);
+                break;
+            // Ajoutez d'autres cas selon vos critères de tri
+        }
+
+        // Inverser l'ordre du comparateur si l'ordre de tri est décroissant
+        if (!croissant) {
+            comparator = comparator.reversed();
+        }
+
+        // Trier les réclamations en utilisant le comparateur
+        reclamations.sort(comparator);
+
+        // Mettre à jour la table avec les réclamations triées
+        table.setItems(reclamations);
+    }
+
 
 
 
