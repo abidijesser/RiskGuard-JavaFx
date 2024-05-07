@@ -248,7 +248,7 @@ public class ReponseController implements Initializable {
 
             // Clear the input fields
             tf_descReponse.clear();
-            tf_idreclamation.clear();
+              tf_idreclamation.clear();
         } catch (SQLException e) {
             // Display an error message if the insertion fails
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
