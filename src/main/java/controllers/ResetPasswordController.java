@@ -9,20 +9,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import java.util.regex.Pattern;
 import java.util.Random;
+import utils.EmailUtil;
 import utils.MyDatabase;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class ResetPasswordController {
-
-//    Random random = new Random();
-//    int OTP=1000 + random.nextInt(9000);
-    int OTP=1234;
+    private int otp;
 
     @FXML
     private TextField emailVerificationTF;
@@ -76,7 +73,6 @@ public class ResetPasswordController {
                 emailVerficationErrorTF.setText("");
             }
         } else {
-
             checkEmailExistence();
         }
 
@@ -93,16 +89,30 @@ public class ResetPasswordController {
             ResultSet rs = pstmt.executeQuery();
 
             if (rs.next() && rs.getInt(1) > 0) {
-                emailVerficationErrorTF.setText("");
-                showSuccessAlert("Vérification Réussie", "L'email existe dans notre base de données.");
-                navigateToOTPVerification();
+                int otp = new Random().nextInt(9000) + 1000; // Generate the OTP
+                String emailBody = String.format(
+                        "Hello,\n\n" +
+                                "Thank you for using our service. Please use the following One-Time Password (OTP) to proceed with your authentication:\n\n" +
+                                "OTP: %d\n\n" +
+                                "This OTP is valid for the next 10 minutes. Please do not share this OTP with anyone.\n\n" +
+                                "Best regards,\n" +
+                                "RiskGuard", otp);
+
+                try {
+                    EmailUtil.sendEmail(email, "Demande de réinitialisation de mot de passe", emailBody);
+                    showSuccessAlert("Email Sent Successfully", "An OTP has been sent to your email address.");
+                    navigateToOTPVerification(); // Navigate only if email is successfully sent
+                } catch (Exception e) {
+                    showAlert("Email Sending Error", "Failed to send email: " + e.getMessage());
+                }
             } else {
                 emailVerficationErrorTF.setText("Email n'existe pas.");
             }
         } catch (SQLException ex) {
-            showAlert("Erreur de Base de Données", "Un problème est survenu lors de la vérification de l'email: " + ex.getMessage());
+            showAlert("Database Error", "A problem occurred while verifying the email: " + ex.getMessage());
         }
     }
+
 
     private void navigateToOTPVerification() {
         try {
@@ -117,26 +127,21 @@ public class ResetPasswordController {
         }
     }
 
-    public void verifyOTP(ActionEvent e){
+    public void verifyOTP(ActionEvent e) {
+        if (OTP1.getText().isBlank() || OTP2.getText().isBlank() || OTP3.getText().isBlank() || OTP4.getText().isBlank()) {
+            OTPErrorMessageTF.setText("Tous les champs doivent être remplis.");
+        } else if (OTP1.getText().length() > 1 || OTP2.getText().length() > 1 || OTP3.getText().length() > 1 || OTP4.getText().length() > 1) {
+            OTPErrorMessageTF.setText("Chaque champ doit contenir un seul digit.");
+        } else {
+            String enteredOTP = OTP1.getText().trim() + OTP2.getText().trim() + OTP3.getText().trim() + OTP4.getText().trim();
 
-        if(OTP1.getText().isBlank() || OTP2.getText().isBlank() || OTP3.getText().isBlank() || OTP4.getText().isBlank() ){
-            OTPErrorMessageTF.setText("Tous le champs doivent etre remplis.");
-
-        } else if (OTP1.getText().length() > 1 || OTP2.getText().length() > 1 || OTP3.getText().length() > 1 || OTP4.getText().length() > 1){
-            OTPErrorMessageTF.setText("Chaque champs doit contient un seul digit.");
-
-        }else {
-            String enteredOTP = OTP1.getText() + OTP2.getText() + OTP3.getText() + OTP4.getText();
-
-            if (enteredOTP.equals(String.valueOf(OTP))) {
+            if (enteredOTP.equals(String.valueOf(otp))) {
                 OTPErrorMessageTF.setText("");
                 showSuccessAlert("Vérification réussie", "Le code OTP est correct.");
-
             } else {
                 OTPErrorMessageTF.setText("OTP est incorrect, vérifiez à nouveau.");
             }
         }
-
     }
 
 

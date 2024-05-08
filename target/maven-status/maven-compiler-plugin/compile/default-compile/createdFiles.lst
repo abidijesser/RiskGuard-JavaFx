@@ -1,11 +1,13 @@
 services\IService.class
 models\Admin.class
 controllers\addClientController.class
+utils\EmailUtil.class
 services\clientService.class
 test\Main.class
 utils\MyDatabase.class
 models\Client.class
 models\AbstractUtilisateur.class
+utils\EmailUtil$1.class
 controllers\loginController.class
 controllers\ResetPasswordController.class
 test\MainFX.class
