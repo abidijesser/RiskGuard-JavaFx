@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Myconnection {
-    private String url = "jdbc:mysql://localhost:3306/assurancee";
+    private String url = "jdbc:mysql://localhost:3306/riskguard-pidev";
     private String login = "root";
     private String password = ""; // Assurez-vous de spécifier le mot de passe de votre utilisateur root ici
 
