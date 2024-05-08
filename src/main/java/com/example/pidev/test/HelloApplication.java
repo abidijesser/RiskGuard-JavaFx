@@ -18,7 +18,7 @@ public class HelloApplication  {
 
 
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("com/example/pidev/hello-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
         Parent root = loader.load();
 
         vieController controller = loader.getController();

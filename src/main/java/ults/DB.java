@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class DB {
 
     // Database connection parameters
-    private static final String URL = "jdbc:mysql://localhost:3306/bdjava"; // Change this to your MySQL URL
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/riskguard-pidev"; // Change this to your MySQL URL
     private static final String USERNAME = "root"; // Change this to your MySQL username
     private static final String PASSWORD = ""; // Change this to your MySQL password
 

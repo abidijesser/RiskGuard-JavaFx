@@ -24,7 +24,7 @@ public  class Main  extends Application {
 
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pidev/hello-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resetPasswordEmailVerification.fxml"));
           //FXMLLoader loader = new FXMLLoader(getClass().getResource("/employe.fxml"));
 
             Parent root = loader.load();

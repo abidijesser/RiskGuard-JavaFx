@@ -18,7 +18,7 @@ public class VehiculeService {
     public VehiculeService() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bdjava", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/riskguard-pidev", "root", "");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();  // Handle the case where the JDBC driver class is not found
         } catch (SQLException e) {

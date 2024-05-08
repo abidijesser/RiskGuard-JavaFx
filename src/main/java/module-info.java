@@ -14,6 +14,7 @@ module com.example.pidev {
     requires itextpdf;
     requires com.google.zxing;
     requires com.google.zxing.javase;
+    requires java.mail;
 
 
     opens com.example.pidev to javafx.fxml;
