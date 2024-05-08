@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="890.0" prefWidth="1350.0" styleClass="gradient-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Gestionemp">
+    <top>
+        <VBox prefHeight="189.0" prefWidth="1350.0">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="161.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/riskguard.png" />
+                            </image>
+                        </ImageView>
+                        <HBox prefHeight="150.0" prefWidth="1063.0">
+                            <children>
+                                <Label prefHeight="96.0" prefWidth="790.0" text="                          Gestion des Employes" textFill="#11449e">
+                                    <font>
+                                        <Font name="Arial Black" size="36.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <Pane prefHeight="71.0" prefWidth="1350.0" styleClass="gradient-background" />
+            </children></VBox>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="616.0" prefWidth="764.0" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <TableView fx:id="tableview" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="384.0" prefWidth="764.0">
+                    <columns>
+                        <TableColumn fx:id="id" prefWidth="50.0" text="ID" />
+                        <TableColumn fx:id="idep" prefWidth="119.20000457763672" text="idep" />
+                        <TableColumn fx:id="nom" prefWidth="202.4000244140625" text="nom" />
+                        <TableColumn fx:id="email" prefWidth="284.7999572753906" text="email" />
+                        <TableColumn fx:id="salaire" prefWidth="107.2000732421875" text="salaire" />
+
+                    </columns>
+                </TableView>
+                <HBox prefHeight="22.0" prefWidth="950.0" spacing="10.0" />
+                <HBox prefHeight="106.0" prefWidth="764.0">
+               <children>
+                   <Pagination fx:id="pagination" />
+               </children></HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                        <Button fx:id="ajouteButton" alignment="CENTER" contentDisplay="CENTER" lineSpacing="20.0" mnemonicParsing="false" onAction="#openAddEmployeeWindow" prefHeight="23.0" prefWidth="83.0" styleClass="button-container-mouse-moved" stylesheets="@style.css" text="AJOUTER">
+                            <font>
+                                <Font name="Arial Black" size="10.0" />
+                            </font>
+                        </Button>
+            
+                   <Button fx:id="deleteButton" alignment="CENTER" contentDisplay="CENTER" lineSpacing="20.0" mnemonicParsing="false" onAction="#delete" prefWidth="72.0" styleClass="button-container-mouse-moved" stylesheets="@style.css" text="DELETE">
+                            <font>
+                                <Font name="Arial Black" size="10.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="updateButton" alignment="CENTER" contentDisplay="CENTER" lineSpacing="20.0" mnemonicParsing="false" onAction="#updateemp" prefWidth="72.0" styleClass="button-container-mouse-moved" stylesheets="@style.css" text="UPDATE">
+                            <font>
+                                <Font name="Arial Black" size="10.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="displayButton" alignment="CENTER" lineSpacing="20.0" mnemonicParsing="false" onAction="#display" prefHeight="28.0" prefWidth="72.0" styleClass="button-container-mouse-moved" stylesheets="@style.css" text="AFFICHER">
+                            <styleClass>
+                                <String fx:value="button" />
+                                <String fx:value="button-container-mouse-moved" />
+                                <String fx:value="column-header-background" />
+                                <String fx:value="container" />
+                                <String fx:value="filler" />
+                                <String fx:value="selected-button-container" />
+                                <String fx:value="table-view" />
+                            </styleClass>
+                            <font>
+                                <Font name="Arial Black" size="10.0" />
+                            </font>
+                        </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#PDF" prefHeight="25.0" prefWidth="53.0" text="PDF">
+                     <font>
+                        <Font name="Arial Black" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            </children>
+        </VBox>
+    </center>
+    <left>
+        <VBox prefHeight="699.0" prefWidth="370.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="95.0" prefWidth="370.0">
+                    <children>
+                        <ImageView fitHeight="75.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/admin.png" />
+                            </image>
+                        </ImageView>
+                        <Label prefHeight="119.0" prefWidth="222.0" styleClass="shadow" text="    Admin :" textFill="#323280">
+                            <font>
+                                <Font name="Arial Black" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Pane prefHeight="11.0" prefWidth="370.0" styleClass="gradient-background" />
+                <VBox prefHeight="116.0" prefWidth="391.0">
+                    <children>
+                        <HBox prefHeight="88.0" prefWidth="357.0">
+                            <children>
+                                <ImageView fitHeight="79.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/assurrr.png" />
+                                    </image>
+                                </ImageView>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="78.0" prefWidth="58.0" text="Aller" />
+                           </children>
+                        </VBox>
+                                <Label prefHeight="40.0" prefWidth="287.0" text="  Gestion  assurances" textFill="#1a4a9e">
+                                    <font>
+                                        <Font name="Arial Black" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Pane prefHeight="8.0" prefWidth="370.0" styleClass="gradient-background" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="116.0" prefWidth="391.0">
+                    <children>
+                        <HBox prefHeight="107.0" prefWidth="334.0">
+                            <children>
+                                <ImageView fitHeight="84.0" fitWidth="101.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/recccc.png" />
+                                    </image>
+                                </ImageView>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="86.0" prefWidth="55.0" text="Aller" />
+                           </children>
+                        </VBox>
+                                <Label prefHeight="27.0" prefWidth="279.0" text="  Gestion  Reclamation" textFill="#1a4a9e">
+                                    <font>
+                                        <Font name="Arial Black" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Pane prefHeight="8.0" prefWidth="391.0" styleClass="gradient-background" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="116.0" prefWidth="391.0">
+                    <children>
+                        <HBox prefHeight="107.0" prefWidth="334.0">
+                            <children>
+                                <ImageView fitHeight="80.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/clien.png" />
+                                    </image>
+                                </ImageView>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="86.0" prefWidth="55.0" text="Aller" />
+                           </children>
+                        </VBox>
+                                <Label prefHeight="27.0" prefWidth="276.0" text="  Gestion des clients" textFill="#1a4a9e">
+                                    <font>
+                                        <Font name="Arial Black" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Pane prefHeight="7.0" prefWidth="370.0" styleClass="gradient-background" />
+                    </children>
+                </VBox>
+                <VBox prefHeight="116.0" prefWidth="391.0">
+                    <children>
+                        <HBox prefHeight="107.0" prefWidth="334.0">
+                            <children>
+                                <ImageView fitHeight="83.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@img/sinn.png" />
+                                    </image>
+                                </ImageView>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button mnemonicParsing="false" prefHeight="86.0" prefWidth="55.0" text="Aller" />
+                           </children>
+                        </VBox>
+                                <Label prefHeight="27.0" prefWidth="282.0" text="    Gestion des sinistres" textFill="#1a4a9e">
+                                    <font>
+                                        <Font name="Arial Black" size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Pane prefHeight="8.0" prefWidth="391.0" styleClass="gradient-background" />
+                    </children>
+                </VBox>
+                <Button fx:id="dep" alignment="CENTER" contentDisplay="CENTER" lineSpacing="20.0" mnemonicParsing="false" onAction="#aller" prefHeight="52.0" prefWidth="313.0" styleClass="button-container-mouse-moved" stylesheets="@style.css" text="Aller a la page department">
+                    <font>
+                        <Font name="Arial Nova Cond" size="21.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+</BorderPane>
