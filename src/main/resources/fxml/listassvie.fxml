@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.RadioButton?>
+<?import java.net.URL?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.assurance.assurancess.controller.ListAssVieController">
+    <children>
+        <VBox spacing="10" layoutX="50.0" layoutY="50.0">
+            <HBox spacing="10">
+                <stylesheets>
+                    <URL value="@css/listassvie.css"></URL>
+                </stylesheets>
+                <!-- Champ de recherche -->
+                <TextField fx:id="rechercheField" promptText="Recherche par ID..." />
+                <!-- Bouton de recherche -->
+                <Button text="Rechercher" onAction="#rechercherAssuranceVie" />
+            </HBox>
+            <!-- ListView pour afficher les assurances vie -->
+            <ListView fx:id="assuranceListView" prefHeight="300.0" prefWidth="400.0" />
+            <!-- Boutons pour supprimer, mettre à jour et recharger les assurances -->
+            <HBox spacing="10">
+                <Button text="Supprimer" onAction="#deleteAssuranceVie" />
+                <Button text="Update" onAction="#updateAssuranceVie" />
+                <Button text="Reload" onAction="#reloadAssurances" />
+                <RadioButton text="Trier par salaire" onAction="#sortAssuranceVieBySalaire" />
+                <RadioButton text="Trier par date de début" onAction="#sortAssuranceVieByDateDebut" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

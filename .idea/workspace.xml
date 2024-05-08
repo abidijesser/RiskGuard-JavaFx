@@ -4,7 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="" />
+    <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/AddAssuranceVieController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/AjoutAssuranceVehiculeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/AssuranceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/Assurancestat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/ListAssVehiculeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/ListAssVieController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/UpdateAssController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/UpdateAssVehiculeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/UpdateAssVieController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/stat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/entities/Assurance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/entities/Assurancevehicule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/entities/Assurancevie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/entities/TwilioSMS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/service/AssuranceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/service/AssuranceVehiculeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/service/AssuranceVieService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/utilities/Myconnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/AddAss.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/assurance/assurancess/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddAss.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AddAssVie.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/AjoutAssuranceVehicule.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/Stat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/UpdateAss.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/assurancestat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/AddAss1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/AddAssVie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/AjoutAssuranceVehicule.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/Stat.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/UpdateAss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/addAss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/assurancestat.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/listass.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/listassveh.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/listassvie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/updassveh.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/css/updassvie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/listass.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/listassveh.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/listassvie.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/updassveh.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxml/updassvie.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +78,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -37,29 +99,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainFX.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;gestionSinstreMerge&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/Taha/IdeaProjects/pidev/src/main/java/com/example/pidev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Taha/Desktop/SceneBuilder.lnk&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MainFX.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Merging testMerge2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/Taha/IdeaProjects/pidev/src/main/java/com/example/pidev",
+    "last_opened_file_path": "C:/Users/Taha/Desktop/SceneBuilder.lnk",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Taha\IdeaProjects\pidev\src\main\resources\com\example\pidev\images" />
@@ -75,7 +138,7 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.pidev.test.Main" />
-      <module name="workshoppidev" />
+      <module name="pidev" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.pidev.test.*" />
@@ -123,7 +186,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cc2ca695-f0c7-4c1b-94a7-a6ba327a7070" name="Changes" comment="" />
+      <changelist id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="" />
       <created>1713202998924</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -166,6 +229,7 @@
       <workItem from="1715123508329" duration="279000" />
       <workItem from="1715123798101" duration="3407000" />
       <workItem from="1715180019519" duration="2702000" />
+      <workItem from="1715197666667" duration="796000" />
     </task>
     <servers />
   </component>
