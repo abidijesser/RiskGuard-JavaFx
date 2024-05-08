@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controllers.StatisticsController"
+      prefWidth="600" prefHeight="400"
+      alignment="CENTER">
+
+    <!-- Title label -->
+    <Text text="Statistics"
+          fill="#333333">
+        <font>
+            <Font size="24"/>
+        </font>
+    </Text>
+
+    <!-- PieChart for displaying statistics -->
+    <PieChart fx:id="pieChart"
+              prefWidth="400" prefHeight="300"/>
+
+</VBox>

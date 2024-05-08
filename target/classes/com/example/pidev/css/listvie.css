@@ -1,0 +1,63 @@
+/* Styling for the label */
+Label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Dark gray color */
+}
+.root {
+    -fx-background-image: url('../images/pngtree-certification-of-quality-control-a-visualized-3d-render-illustration-depicting-assurance-image_13558264.png');
+    -fx-background-size: cover;
+
+}
+
+/* Styling for the TableView */
+.TableView {
+    -fx-font-size: 14px;
+}
+
+/* Styling for the Update button */
+.buttonupdate {
+    -fx-background-color: #007bff; /* Blue color */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px; /* Padding */
+    -fx-border-radius: 5px; /* Rounded corners */
+}
+
+/* Styling for the Delete button */
+.buttondelete {
+    -fx-background-color: #dc3545; /* Red color */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px; /* Padding */
+    -fx-border-radius: 5px; /* Rounded corners */
+}
+
+/* Styling for button hover effect */
+.button:hover {
+    -fx-background-color: #800080; /* Darker blue color on hover */
+    -fx-cursor: hand; /* Show hand cursor on hover */
+}
+
+/* Styling for button pressed effect */
+.button:pressed {
+    -fx-background-color: #008080; /* Darker blue color when pressed */
+}
+.button#pdf{
+    -fx-background-color: #28a745; /* Green color */
+    -fx-text-fill: white; /* White text color */
+    -fx-font-size: 14px;
+    -fx-padding: 8px 16px; /* Padding */
+    -fx-border-radius: 5px; /* Rounded corners */
+}
+
+/* Styling for button hover effect */
+.button#pdf:hover {
+    -fx-background-color: #b564db; /* Darker green color on hover */
+    -fx-cursor: hand; /* Show hand cursor on hover */
+}
+
+/* Styling for button pressed effect */
+.button#pdf:pressed {
+    -fx-background-color: #1e7e34; /* Darker green color when pressed */
+}

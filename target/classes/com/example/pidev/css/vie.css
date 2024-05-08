@@ -1,0 +1,86 @@
+/* Style for VBox */
+.vbox {
+    -fx-spacing: 20; /* Spacing between child nodes */
+    -fx-alignment: center; /* Alignment of child nodes within the VBox */
+}
+/* styles.css */
+
+.root {
+    -fx-background-image: url('../images/252265819.jpg');
+    -fx-background-size: cover;
+}
+
+
+/* Style for TextField */
+.text-field {
+    -fx-background-color: #f8f9fa; /* Background color */
+    -fx-background-radius: 5; /* Rounded corners */
+    -fx-border-color: #ced4da; /* Border color */
+    -fx-border-radius: 5; /* Border radius */
+    -fx-border-width: 1; /* Border width */
+    -fx-padding: 8; /* Padding inside the text field */
+    -fx-font-size: 14px; /* Font size */
+    -fx-pref-width: 250; /* Preferred width */
+    -fx-text-fill: #495057; /* Text color */
+}
+.tooltip {
+    -fx-background-color: #B3001BFF; /* Background color */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 12px; /* Font size */
+    -fx-padding: 4px 8px; /* Padding */
+    -fx-background-radius: 5; /* Rounded corners */
+    -fx-border-color: #495057; /* Border color */
+    -fx-border-width: 1; /* Border width */
+}
+/* Style for Button */
+.button {
+    -fx-background-color: #002ab3; /* Background color */
+    -fx-text-fill: white; /* Text color */
+    -fx-font-size: 14px; /* Font size */
+    -fx-padding: 10 20; /* Padding */
+    -fx-pref-width: 120; /* Preferred width */
+    -fx-cursor: hand; /* Cursor on hover */
+    -fx-background-radius: 5; /* Rounded corners */
+}
+
+/* Hover effect for Button */
+.button:hover {
+    -fx-background-color: #b564db; /* Background color on hover */
+}
+
+
+/* Style for Text */
+.text {
+    -fx-font-size: 16px; /* Font size */
+    -fx-text-fill: #B3001BFF; /* Text color */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-padding: 5; /* Padding */
+
+}
+/* Style for Title */
+
+
+/* Style for Subtitle */
+.subtitle-text {
+    -fx-font-size: 18px; /* Font size */
+    -fx-text-fill: #200abb; /* Text color */
+    -fx-font-weight: bold; /* Bold text */
+
+    -fx-font-family: "Arial", sans-serif; /* Font family */
+    -fx-background-color: #06b3ec; /* Background color */}
+.green-text {
+    -fx-font-size: 16px; /* Font size */
+    -fx-fill: #06b3ec; /* Green text color */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-padding: 5; /* Padding */
+}
+
+/* Style for TextFlow */
+.text-flow#LL {
+    -fx-background-color: #06b3ec;
+}
+
+/* Style for TextArea */
+.text-area {
+    -fx-background-color: #002ab3;
+}
