@@ -4,71 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/La Liste des employee.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AddDep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AddEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/EditDep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/EditEmployee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Gestiondep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/Gestionemp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/PDF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/maininterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Department.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/depService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/departmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/empService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/employeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/MyDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Edit_dep.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Edit_employee.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/add_dep.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/add_employee.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/gestiondep.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/gestionemp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/Logo bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/admin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/assurrr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/clien.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/etudiant.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-admin-50 - Copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-admin-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-admin-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-answers-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-bad-review-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-control-panel-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-dashboard-48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-graduation-cap-64 - Copy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-graduation-cap-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-inbox-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-notification-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-notification.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-planner-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/icons8-settings-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/images.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/images.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/les-partenaires.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/page-daccueil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/professeur.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/recccc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/riskguard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/sinn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/test2.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/ResetPasswordController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/addClientController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/loginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/clientService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/EmailUtil$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/EmailUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/MyDatabase.class" beforeDir="false" />
-    </list>
+    <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging testMerge2",
+    "git-widget-placeholder": "testMerge2",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/Taha/IdeaProjects/pidev/src/main/java/com/example/pidev",
