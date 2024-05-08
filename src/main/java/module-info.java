@@ -19,6 +19,9 @@ module com.example.pidev {
     requires com.google.zxing.javase;
     requires java.mail;
     requires twilio;
+    requires layout;
+    requires kernel;
+    requires io;
 
     opens com.example.pidev to javafx.fxml, javafx.base;
     exports com.example.pidev.test;

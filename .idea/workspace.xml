@@ -4,7 +4,183 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="" />
+    <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/MarketingDetailsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/categorieController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/clientController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/marketingCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/categorie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/commentaire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/marketing.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/CommentaireService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/categorieService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/marketingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/SmsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/MarketingDetails.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/categorie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/categorie.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/clientV.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/clientView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/combobox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/backgroud.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/backgroundcolor-fills.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/benjamin-cheng-TbXBPyLUK9E-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/micke-lindstrom-Mu39DUwHhP4-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image/wesley-tingey-AZtMXheXnWc-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/marketing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/marketingCRUD.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/marketingDetails.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pdf/output.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/piechart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/statistics.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/AddAss.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/CSS/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Edit_dep.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Edit_employee.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/AddAss.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/AddAssVie.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/AjoutAssuranceVehicule.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/Back.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/Front.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/Reponse.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/Stat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/UpdateAss.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/assurancestat.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/AddAss1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/AddAssVie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/AjoutAssuranceVehicule.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/Stat.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/UpdateAss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/addAss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/assurancestat.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/listass.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/listassveh.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/listassvie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/updassveh.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/css/updassvie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/listass.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/listassveh.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/listassvie.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/statistique.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/updassveh.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Fxml/updassvie.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/javamail.default.address.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/MarketingDetails.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/add_dep.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/add_employee.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/categorie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/categorie.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/clientV.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/clientView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/assurance/assurancess/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/VehiculeEmploye.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/css/listvie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/css/vehicule.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/css/vehiculeEmploye.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/css/vie.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/images/252265819.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/images/arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/images/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/images/loupe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/images/pngtree-certification-of-quality-control-a-visualized-3d-render-illustration-depicting-assurance-image_13558264.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/images/toa-heftiba-JQcMFXSj6XY-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/statistic.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/example/pidev/vehicule.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/combobox.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/controllers/MarketingDetailsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/controllers/StatisticsController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/controllers/categorieController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/controllers/clientController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/controllers/marketingCRUD.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/employe.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/gestiondep.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/gestionemp.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/image/backgroud.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/image/background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/image/backgroundcolor-fills.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/image/benjamin-cheng-TbXBPyLUK9E-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/image/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/image/micke-lindstrom-Mu39DUwHhP4-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/image/wesley-tingey-AZtMXheXnWc-unsplash.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/560199.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/ass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/claim.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/dot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/ok.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/reponse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/statistique.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/Logo bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/admin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/assurrr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/clien.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/etudiant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-admin-50 - Copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-admin-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-admin-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-answers-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-bad-review-50.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-control-panel-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-dashboard-48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-graduation-cap-64 - Copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-graduation-cap-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-inbox-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-notification-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-notification.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-planner-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/icons8-settings-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/images.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/images.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/les-partenaires.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/page-daccueil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/professeur.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/recccc.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/riskguard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/img/sinn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketingCRUD.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/marketingDetails.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/models/categorie.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/models/commentaire.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/models/marketing.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/pdf/output.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/piechart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/script.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/services/CommentaireService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/services/categorieService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/services/marketingService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/statistics.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/test2.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/utils/SmsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VieDetails.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/VieDetails.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/StatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/StatisticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/MainFX.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/MyDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/MyDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/ResetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/ResetPasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/loginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/clientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/clientService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/MainFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/MyDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/MyDatabase.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,7 +229,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "testMerge2",
+    "git-widget-placeholder": "Merging testMerge2",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/Taha/IdeaProjects/pidev/src/main/java/com/example/pidev",

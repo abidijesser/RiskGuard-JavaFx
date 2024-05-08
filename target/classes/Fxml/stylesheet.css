@@ -1,0 +1,40 @@
+/* stylesheet.css */
+
+/* Style for the VBox */
+VBox {
+    -fx-spacing: 20;
+    -fx-alignment: center;
+}
+
+/* Style for the Label "Ajouter une assurance" */
+Label {
+    -fx-font-size: 24px;
+}
+
+/* Style for the HBox */
+HBox {
+    -fx-spacing: 20;
+}
+
+/* Style for the Labels inside the HBox */
+HBox > Label {
+    -fx-min-width: 120px; /* Adjust width as needed */
+}
+
+/* Style for the TextFields */
+.text-field {
+    -fx-pref-width: 200px; /* Adjust width as needed */
+}
+
+/* Style for the Button "Ajouter" and "Return" */
+.button {
+    -fx-pref-width: 100px; /* Adjust width as needed */
+    -fx-background-color: #4CAF50; /* Green color */
+    -fx-text-fill: white; /* White text color */
+}
+
+/* Style for the ListView */
+#assuranceListView {
+    -fx-pref-width: 400px; /* Adjust width as needed */
+    -fx-pref-height: 200px; /* Adjust height as needed */
+}

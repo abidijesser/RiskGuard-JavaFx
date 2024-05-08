@@ -1,0 +1,45 @@
+.root {
+    -fx-background-image: url('image/benjamin-cheng-TbXBPyLUK9E-unsplash.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10px;
+    -fx-background-color: #ecf0f1;
+    -fx-alignment: center;
+}
+
+.scroll-pane {
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+}
+
+.flow-pane {
+    -fx-background-color: #bdc3c7;
+    -fx-padding: 20px;
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #34495e;
+}
+
+/* Example style for cards that might be dynamically added to the flow pane */
+.card {
+    -fx-background-color: #ffffff; /* White background for the card */
+    -fx-border-color: #2c3e50; /* Darker border color for better visibility */
+    -fx-border-width: 2px; /* Thicker border to make it more pronounced */
+    -fx-border-radius: 8px; /* Slightly larger radius for a smoother curve */
+    -fx-background-radius: 8px; /* Radius should match border-radius */
+    -fx-padding: 15px; /* Padding inside the card */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 15, 0, 0, 10); /* Stronger shadow for more depth */
+    -fx-max-width: 200px; /* Maximum width of the card */
+    -fx-max-height: 300px; /* Maximum height of the card */
+}
+

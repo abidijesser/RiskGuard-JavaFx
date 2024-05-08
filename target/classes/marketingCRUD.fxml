@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="634.0" prefWidth="1243.0" stylesheets="marketing.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.marketingCRUD">
+   <children>
+      <VBox alignment="center" layoutY="7.0" prefHeight="634.0" prefWidth="1243.0" spacing="20" style="-fx-background-color: #f9f9f9; -fx-padding: 20px;" styleClass="main-vbox" stylesheets="marketing.css">
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+            <children>
+               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion de Marketing">
+                  <font>
+                     <Font name="Bookman Old Style" size="33.0" />
+                  </font>
+               </Text>
+               <ImageView fitHeight="108.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@image/favicon.png" />
+                  </image>
+               </ImageView>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+            <children>
+               <Button fx:id="showStatisticsButton" onAction="#handleShowStatistics" text="Show Statistics" />
+      
+      
+               <!-- Add New View Button -->
+               <Button fx:id="showCategorieButton" onAction="#handleShowCategorieButton" styleClass="form-button" text="Manage Categories" />
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0">
+            <children>
+            
+               <!-- Input Fields with enhanced style for uniformity -->
+               <TextField fx:id="titreField" promptText="Enter Title" styleClass="input-field">
+               <tooltip>
+                  <Tooltip text="Enter the title for the marketing campaign" />
+               </tooltip>
+               </TextField>
+               <TextField fx:id="budgetField" alignment="CENTER" promptText="Enter Budget" styleClass="input-field" />
+            </children>
+         </HBox>
+         <TextField fx:id="objectifField" promptText="Enter Objective" styleClass="input-field">
+         <tooltip>
+            <Tooltip text="Enter the title for the marketing campaign" />
+         </tooltip>
+         </TextField>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+            <children>
+               <DatePicker fx:id="dateDebutPicker" promptText="Select Start Date" styleClass="date-picker" />
+               <DatePicker fx:id="dateFinPicker" promptText="Select End Date" styleClass="date-picker">
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+               </DatePicker>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+            <children>
+            
+               <ComboBox fx:id="categorieComboBox" promptText="Select Category" styleClass="combo-box" />
+               <Button fx:id="uploadImageButton" onAction="#handleUploadImageButton" text="Upload Image" />
+            
+               <ComboBox fx:id="filterCategoryComboBox" promptText="Filter by Category" />
+               <RadioButton fx:id="activeRadioButton" mnemonicParsing="false" text="Active">
+                  <toggleGroup>
+                     <ToggleGroup fx:id="statusToggleGroup" />
+                  </toggleGroup>
+               </RadioButton>
+               <RadioButton fx:id="endedRadioButton" mnemonicParsing="false" text="Ended" toggleGroup="$statusToggleGroup" />
+            </children>
+         </HBox>
+      
+      
+         <!-- HBox for horizontally aligning buttons -->
+         <HBox alignment="center" spacing="10.0">
+            <Button onAction="#handleAddMarketingButton" prefHeight="26.0" prefWidth="106.0" styleClass="form-button" text="Add Marketing" />
+            <Button onAction="#handleUpdateMarketingButton" styleClass="form-button" text="Update Marketing" />
+            <Button onAction="#handleDeleteMarketingButton" styleClass="form-button" text="Delete Marketing" />
+            <Button fx:id="generatePdfButton" onAction="#handleGeneratePdf" styleClass="form-button" text="Generate PDF" />
+         </HBox>
+      
+         <!-- TableView to display marketing data with better layout and appearance -->
+         <TableView fx:id="marketingTableView" prefHeight="271.0" prefWidth="789.0" styleClass="table-view">
+            <columns>
+               <!-- Columns with specified widths to accommodate content adequately -->
+               <TableColumn fx:id="titreColumn" maxWidth="200" minWidth="100" text="Title" />
+               <TableColumn fx:id="objectifColumn" maxWidth="200" minWidth="100" text="Objective" />
+               <TableColumn fx:id="budgetColumn" maxWidth="200" minWidth="100" text="Budget" />
+               <TableColumn fx:id="startDateColumn" maxWidth="200" minWidth="100" text="Start Date" />
+               <TableColumn fx:id="endDateColumn" maxWidth="200" minWidth="100" text="End Date" />
+               <TableColumn fx:id="categorieColumn" maxWidth="200" minWidth="100" text="Categories" />
+               <TableColumn fx:id="statusColumn" maxWidth="200" minWidth="100" text="Status" />
+      
+      
+            </columns>
+         </TableView>
+      
+      </VBox>
+   </children>
+</AnchorPane>

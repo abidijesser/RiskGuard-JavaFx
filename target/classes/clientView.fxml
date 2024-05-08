@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+<?import javafx.scene.control.Button?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.clientController" stylesheets="clientV.css">
+    <top>
+        <Label text="Marketing Campaigns" styleClass="title" />
+    </top>
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <FlowPane fx:id="marketingFlowPane" hgap="20" vgap="20" alignment="CENTER">
+                <!-- Event cards will be dynamically added here -->
+
+            </FlowPane>
+        </ScrollPane>
+    </center>
+</BorderPane>

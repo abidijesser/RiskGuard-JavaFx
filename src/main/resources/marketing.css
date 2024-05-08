@@ -1,0 +1,93 @@
+/* General application styling */
+.main-vbox {
+    -fx-background-image: url('image/wesley-tingey-AZtMXheXnWc-unsplash.jpg');
+    -fx-background-size: cover; /* Ensures the image covers the entire area */
+    -fx-background-repeat: no-repeat; /* Prevents the image from repeating */
+    -fx-background-position: center center; /* Centers the image */
+    -fx-padding: 20;
+}
+
+
+/* Styling for main title text */
+Text {
+    -fx-fill: #2c3e50; /* Dark blue for contrast */
+    -fx-font-size: 24px; /* Slightly smaller font size for a modern look */
+    -fx-font-family: "Arial"; /* Common, clean font style */
+}
+
+/* General button styling */
+.button {
+    -fx-background-color: #3498db; /* Vibrant blue for visibility */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent;
+    -fx-background-radius: 5;
+    -fx-padding: 12 25; /* More padding for a buttonier feel */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 2); /* Subtle shadow for depth */
+}
+
+.button:hover {
+    -fx-background-color: #2980b9; /* Darker shade on hover for feedback */
+}
+
+/* Input fields, enhancing clarity */
+.input-field {
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+    -fx-border-width: 2px;
+    -fx-border-color: #bdc3c7; /* Light grey border for soft appearance */
+    -fx-background-color: #ecf0f1; /* Very light grey background for visibility */
+    -fx-border-radius: 4px;
+}
+
+.input-field:focused {
+    -fx-border-color: #3498db; /* Highlight focus with theme color */
+}
+
+/* Combo box and date picker uniformity */
+.combo-box, .date-picker {
+    -fx-padding: 8;
+    -fx-border-width: 2px;
+    -fx-border-color: #bdc3c7;
+    -fx-background-color: #ecf0f1;
+    -fx-border-radius: 4px;
+}
+
+.combo-box:focused, .date-picker:focused {
+    -fx-border-color: #3498db;
+}
+
+/* Styling for tables, clean and clear */
+.table-view {
+    -fx-base: #ffffff;
+    -fx-control-inner-background: #ffffff;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ecf0f1;
+    -fx-table-cell-border-color: #ecf0f1;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* Tooltips */
+.tooltip {
+    -fx-font-size: 12px;
+    -fx-background-color: #34495e; /* Darker background for legibility */
+    -fx-text-fill: white;
+    -fx-padding: 8;
+    -fx-background-radius: 6;
+}
+
+/* Enhancements for radio buttons */
+.radio-button {
+    -fx-padding: 5;
+    -fx-font-size: 14px;
+}
+
+.radio-button .radio {
+    -fx-fill: #3498db;
+    -fx-padding: 5;
+}

@@ -10,7 +10,7 @@ public class MyDatabase {
     public static final String USER = "root";
     public static final String PASSWORD = "";
 
-    public Connection connection;
+    public static Connection connection;
     public static MyDatabase instance;
 
     public MyDatabase() {
@@ -28,12 +28,14 @@ public class MyDatabase {
         return instance;
     }
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         try {
-            return DriverManager.getConnection(URL, USER, PASSWORD);
+            if (connection == null || connection.isClosed()) {
+                instance = new MyDatabase();
+            }
         } catch (SQLException e) {
-            System.err.println("Database Connection Failed: " + e.getMessage());
-            return null;
+            System.err.println("Failed to check connection status: " + e.getMessage());
         }
+        return connection;
     }
 }

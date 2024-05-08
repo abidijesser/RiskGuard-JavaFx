@@ -1,0 +1,65 @@
+/* Styles for the title label */
+#titre {
+    -fx-font-size: 20pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-background-color: #0000ff; /* Blue background */
+    -fx-padding: 10px; /* Add padding */
+    -fx-alignment: center; /* Center align text */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0); /* Drop shadow effect */
+}
+#titreE {
+    -fx-font-size: 20pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-background-color: #0000ff; /* Blue background */
+    -fx-padding: 10px; /* Add padding */
+    -fx-alignment: center; /* Center align text */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 0); /* Drop shadow effect */
+}
+/* Styles for buttons */
+.button {
+    -fx-font-size: 14pt;
+    -fx-background-color: #ffffff; /* Green background */
+    -fx-border-color: #0000ff; /* Blue border */
+    -fx-border-width: 2px; /* Border width */
+}
+
+/* Set blue color for button text */
+.button .text {
+    -fx-fill: #0000ff; /* Blue */
+}
+
+/* Styles for text */
+.text {
+    -fx-font-size: 14pt;
+    -fx-fill: #333333; /* Dark gray */
+}
+
+/* Styles for labels */
+.label {
+    -fx-font-size: 20pt;
+    -fx-text-fill: #ffffff; /* White */
+}
+
+/* Styles for images */
+.image-view {
+    -fx-opacity: 0.8; /* Semi-transparent */
+}
+button#BROWSE {
+    -fx-font-size: 12px;
+    -fx-pref-width: 70px;
+    -fx-pref-height: 20px;
+    -fx-padding: 5px 10px;
+}
+
+/* Styles for button hover */
+button#BROWSE:hover {
+    -fx-background-color: #b3b3b3; /* Light gray */
+}
+
+/* Styles for button pressed */
+button#BROWSE:pressed {
+    -fx-background-color: #666666; /* Dark gray */
+    -fx-text-fill: #ffffff; /* White text color */
+}

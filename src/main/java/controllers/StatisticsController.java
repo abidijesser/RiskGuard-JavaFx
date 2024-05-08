@@ -7,6 +7,13 @@ import javafx.scene.chart.PieChart;
 import services.VehiculeService;
 import services.VieService;
 
+
+import java.sql.SQLException;
+import java.time.Month;
+import java.time.format.TextStyle;
+import java.util.Locale;
+import java.util.Map;
+
 import java.sql.SQLException;
 
 public class StatisticsController {
@@ -41,6 +48,8 @@ public class StatisticsController {
             // Handle exceptions if necessary
         }
     }
+
+
 
 
 }

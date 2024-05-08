@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="889.0" styleClass="root" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.riskguard.crudjava.StatController">
+    <children>
+        <VBox prefHeight="532.0" prefWidth="199.0">
+            <children>
+                <AnchorPane fx:id="side_ankerpane" prefHeight="565.0" prefWidth="199.0" styleClass="side_ankerpane" stylesheets="@../CSS/styles.css">
+                    <children>
+                        <Button fx:id="btn_reclamation" layoutX="7.0" layoutY="179.0" mnemonicParsing="false" onAction="#goreclamation" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Reclamation" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="34.0" fitWidth="30.0" layoutX="22.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/claim.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="btn_reponse" layoutX="7.0" layoutY="245.0" mnemonicParsing="false" onAction="#goreponse" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Reponse      " textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="22.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/reponse.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView blendMode="LIGHTEN" fitHeight="150.0" fitWidth="148.0" layoutX="16.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/logo.png" />
+                            </image></ImageView>
+                        <Button fx:id="btn_statistique" layoutX="7.0" layoutY="310.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Statistique    " textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="26.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/statistique.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="67.0" layoutX="76.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../Downloads/438267351_1591128661739309_1152519402894951401_n.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <Pane prefHeight="563.0" prefWidth="690.0">
+            <children>
+                <Pane prefHeight="80.0" prefWidth="690.0">
+                    <children>
+                        <Text fill="#eae5e5" layoutX="59.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="RiskGuard Statistiques concernant l'etat des réclamations soumises :" wrappingWidth="557.5366821289062">
+                            <font>
+                                <Font name="Century Gothic Bold" size="22.0" />
+                            </font>
+                        </Text>
+                        <ImageView fitHeight="50.0" fitWidth="53.0" layoutX="9.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/560199.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </Pane>
+                <AnchorPane layoutX="-2.0" layoutY="84.0" prefHeight="478.0" prefWidth="690.0">
+                    <children>
+                        <HBox layoutX="155.0" layoutY="24.0" prefHeight="429.0" prefWidth="327.0">
+                            <children>
+                                <Pane prefHeight="404.0" prefWidth="315.0" styleClass="inner_pane" stylesheets="@../CSS/styles.css">
+                                    <children>
+                                        <PieChart fx:id="PieChart" layoutX="15.0" layoutY="44.0" prefHeight="303.0" prefWidth="287.0" stylesheets="@../CSS/styles.css" titleSide="BOTTOM">
+                                            <styleClass>
+                                                <String fx:value="symbol" />
+                                                <String fx:value="chart-title" />
+                                                <String fx:value="axis-major-tick-mark" />
+                                                <String fx:value="axis-minor-tick-mark" />
+                                                <String fx:value="chart-pie-label" />
+                                            </styleClass></PieChart>
+                                    </children>
+                                </Pane>
+                                
+                            </children>
+                        </HBox>
+                        <HBox layoutX="4.0" layoutY="363.0" prefHeight="114.0" prefWidth="684.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </Pane>
+    </children>
+</HBox>

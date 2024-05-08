@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<?import java.net.URL?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.assurance.assurancess.controller.AddAssuranceVieController"
+      prefWidth="400" prefHeight="300" alignment="CENTER">
+    <stylesheets>
+        <URL value="@css/AddAssVie.css"></URL>
+    </stylesheets>
+
+    <Label text="Ajouter Assurance Vie" style="-fx-font-size: 18px;" />
+
+    <VBox spacing="10" alignment="CENTER">
+        <Label text="Date de début" />
+        <DatePicker fx:id="datedebutPicker" promptText="Date de début" />
+        <Label text="Période de validation" />
+        <TextField fx:id="periodeValidationField" promptText="Période de validation" />
+        <Label text="Salaire client" />
+        <TextField fx:id="salaireClientField" promptText="Salaire client" />
+        <Label text="Fiche de paie" />
+        <TextField fx:id="ficheDePaieField" promptText="Fiche de paie" />
+        <Label text="Réponse" />
+        <TextField fx:id="reponseField" promptText="Réponse" />
+
+        <!-- Ajout du bouton "Ajouter" avec l'action correspondante -->
+        <Button text="Ajouter" onAction="#addAssuranceVie" />
+        <Button text="Show" onAction="#showAssuranceVie" />
+    </VBox>
+
+</VBox>

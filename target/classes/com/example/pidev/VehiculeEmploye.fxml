@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@css/vehiculeEmploye.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.VehiculeEmployeController"  styleClass="root">
+
+    <TableView fx:id="tableve" layoutX="50.0" layoutY="50.0" prefHeight="350.0" prefWidth="700.0">
+        <columns>
+            <TableColumn fx:id="nomveh" text="Nom" />
+            <TableColumn fx:id="prenomveh" text="Prénom" />
+            <TableColumn fx:id="cinveh" text="CIN" />
+            <TableColumn fx:id="typeveh" text="Type de véhicule" />
+            <TableColumn fx:id="matriculeveh" text="Matricule" />
+            <TableColumn fx:id="lieuveh" text="Lieu" />
+            <TableColumn fx:id="dateveh" text="Date" />
+            <TableColumn fx:id="descveh" text="Description" />
+            <TableColumn fx:id="imageveh" text="Image" />
+        </columns>
+    </TableView>
+
+    <Button fx:id="deleteve" layoutX="50.0" layoutY="410.0" onAction="#deleteveh" text="Delete" />
+    <Button fx:id="updateve" layoutX="150.0" layoutY="410.0" onAction="#updateveh" text="Update" />
+    <Label fx:id="titre" layoutX="50.0" layoutY="20.0" text="" />
+    <Text fx:id="titree" layoutX="50.0" layoutY="20.0" text="Listes des Constats Vehicules" />
+    <ImageView fx:id="logo" fitHeight="174.0" fitWidth="138.0" layoutX="662.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@images/logo.png" />
+        </image>
+    </ImageView>
+    <Button fx:id="navigatetostatistic" layoutX="260" layoutY="410" mnemonicParsing="false" onAction="#navigateTostatistic" text=" statistics" />
+</AnchorPane>

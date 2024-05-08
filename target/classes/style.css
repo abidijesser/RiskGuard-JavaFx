@@ -1,0 +1,59 @@
+.gradient-background{
+    -fx-background-color:linear-gradient(from 25% 25% to 100% 100% ,#AEC6CF,#19373b);
+}
+.line-color{
+    -fx-background-color:#E6E6FA;
+}
+.container{
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-background-radius:10;
+}
+.shadow{
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.2),10.0 , 0,0,10.0);
+}
+.selected-button-container{
+    -fx-background-color: rgba(255,255,255,0.15);
+}
+.button-container-mouse-moved :hover{
+    -fx-background-color: rgba(255,255,255,0.1);
+}
+.table-view {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom, #1dbbdd44, #AEDFF7);
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+.button{
+    -fx-background-color: #AEDFF7;
+    -fx-background-radius: 30 30 30 30;
+}
+.button:hover{
+    -fx-background-color: #AEDFF7;
+    -fx-background-radius: 30 0 0 30;
+}
+.button:pressed{
+    -fx-background-color: #AEDFF7;
+    -fx-background-radius: 30 0 0 30;
+}
+/* styles.css */
+
+.myChoiceBox {
+    -fx-font-size: 16px;
+    -fx-background-color: #B0E0E6; /* Set your background color */
+    -fx-text-fill: #333333; /* Set your text color */
+    -fx-border-color: #666666; /* Set your border color */
+}
+
+.myChoiceBox .arrow {
+    -fx-background-color: #B0E0E6; /* Set the arrow color */
+}
+
+.myChoiceBox .button {
+    -fx-background-color: #B0E0E6; /* Set the button color */
+}

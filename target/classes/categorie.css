@@ -1,0 +1,65 @@
+.root {
+    -fx-background-image: url('image/benjamin-cheng-TbXBPyLUK9E-unsplash.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333333;
+    -fx-padding: 5px;
+}
+
+.button {
+    -fx-background-color: #5a9bd4, linear-gradient(#385d8a, #5a9bd4);
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 5, 5;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+    -fx-padding: 5px 10px 5px 10px;
+}
+
+.button:hover {
+    -fx-background-color: #6faadd, linear-gradient(#5078a3, #6faadd);
+}
+
+.text-field {
+    -fx-background-color: white, #ececec;
+    -fx-background-insets: 0, 1;
+    -fx-border-insets: 1;
+    -fx-border-radius: 5;
+    -fx-border-color: #c4c4c4;
+    -fx-padding: 3px;
+}
+
+.table-view {
+    -fx-base: white;
+    -fx-control-inner-background: #f0f0f0;
+    -fx-background-color: #bfc2c7;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 5px;
+}
+
+.table-column {
+    -fx-alignment: CENTER-LEFT;
+}
+
+.table-row-cell:empty {
+    -fx-background-color: #f0f0f0;
+}
+
+.table-view:focused {
+    -fx-background-insets: 1.4;
+    -fx-padding: 1px;
+}
+
+.form-button {
+    -fx-background-color: #3c7fb1;
+    -fx-text-fill: #e0e0e0;
+}
+
+.form-button:hover {
+    -fx-background-color: #559edf;
+    -fx-text-fill: #ffffff;
+}
