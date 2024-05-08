@@ -7,4 +7,6 @@ utils\MyDatabase.class
 models\Client.class
 models\AbstractUtilisateur.class
 controllers\loginController.class
+controllers\ResetPasswordController.class
 test\MainFX.class
+controllers\OTPVerification.class

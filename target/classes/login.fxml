@@ -69,7 +69,7 @@
             <Label layoutX="31.0" layoutY="366.0" text="Vous n'avez pas encore un compte ?" />
             <Label fx:id="signupTF" layoutX="227.0" layoutY="366.0" text="S'inscrire" textFill="#3b07e4">
                <cursor>
-                  <Cursor fx:constant="MOVE" />
+                  <Cursor fx:constant="HAND" />
                </cursor></Label>
             <Label fx:id="passwordErrorMessageTF" layoutX="27.0" layoutY="258.0" prefHeight="24.0" prefWidth="304.0" textFill="#e80000">
                <font>
