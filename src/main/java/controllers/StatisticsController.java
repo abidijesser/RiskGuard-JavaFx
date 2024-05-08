@@ -7,13 +7,17 @@ import javafx.scene.chart.PieChart;
 import services.marketingService;
 
 import java.sql.SQLException;
+import java.time.Month;
+import java.time.format.TextStyle;
+import java.util.Locale;
+import java.util.Map;
 
 public class StatisticsController {
 
     @FXML
     private PieChart statusPieChart;
 
-    private marketingService marketingService;
+    marketingService marketingService;
 
     @FXML
     private void initialize()  {
@@ -25,25 +29,23 @@ public class StatisticsController {
     }
 
     private void populatePieChart() {
-        try {
-            long activeCount = marketingService.getActiveMarketingCount();
-            long endedCount = marketingService.getEndedMarketingCount();
+        Map<Integer, Integer> budgetData = marketingService.getMonthlyBudget();
 
-            statusPieChart.getData().addAll(
-                    new PieChart.Data("Active", activeCount),
-                    new PieChart.Data("Ended", endedCount)
-            );
-        } catch (SQLException e) {
-            e.printStackTrace();
-            // Handle exception
-        }
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+        budgetData.forEach((month, budget) -> {
+            String monthName = Month.of(month).getDisplayName(TextStyle.FULL, Locale.getDefault());
+            pieChartData.add(new PieChart.Data(monthName, budget));
+        });
+
+        statusPieChart.setData(pieChartData);
     }
 
-    public void setData(int activeCount, int endedCount) {
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("Active", activeCount),
-                new PieChart.Data("Ended", endedCount)
-        );
+
+    public void setChartData(Map<String, Integer> dataMap) {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
+        dataMap.forEach((label, value) -> {
+            pieChartData.add(new PieChart.Data(label, value));
+        });
         statusPieChart.setData(pieChartData);
     }
 

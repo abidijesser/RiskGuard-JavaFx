@@ -6,9 +6,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
@@ -17,21 +17,17 @@ import models.marketing;
 import services.categorieService;
 import services.marketingService;
 import models.categorie;
-
+import controllers.clientController;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
+import java.time.Month;
+import java.time.format.TextStyle;
+import java.util.*;
 import java.util.stream.Collectors;
-import javafx.fxml.FXML;
-import javafx.scene.chart.PieChart;
-import services.marketingService;
 
-import java.sql.SQLException;
-import controllers.StatisticsController;
 import utils.SmsService;
 
 public class marketingCRUD{
@@ -88,33 +84,45 @@ public class marketingCRUD{
 
 
     @FXML
-    private void handleShowStatistics() {
+    private void handleShowStatistics(ActionEvent event) {
         try {
-            // Load the FXML file for the statistics interface
+            Node source = (Node) event.getSource();
+            Stage stage = (Stage) source.getScene().getWindow();
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/statistics.fxml"));
             Parent root = loader.load();
+            stage.setScene(new Scene(root));
+            stage.show();
 
-            // Get the controller associated with the loaded FXML
             StatisticsController controller = loader.getController();
-
             if (controller == null) {
                 System.out.println("Controller is null");
             } else {
                 System.out.println("Controller is not null");
 
-                // Set data to the PieChart
-                controller.setData(controller.getActiveMarketingCount(), controller.getEndedMarketingCount());
+                // Fetch monthly budget data and set it on the PieChart
+                Map<Integer, Integer> monthlyData = controller.marketingService.getMonthlyBudget();
+                Map<String, Integer> formattedData = transformMonthlyData(monthlyData);
+                controller.setChartData(formattedData);
             }
-
-            // Create a new stage for the statistics interface
-            Stage stage = new Stage();
-            stage.setTitle("Statistics");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException | SQLException e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            System.err.println("Failed to load the statistics interface or fetch data: " + e.getMessage());
         }
     }
+
+    private Map<String, Integer> transformMonthlyData(Map<Integer, Integer> monthlyData) {
+        Map<String, Integer> transformedData = new HashMap<>();
+        monthlyData.forEach((month, budget) -> {
+            String monthName = Month.of(month).getDisplayName(TextStyle.FULL, Locale.getDefault());
+            transformedData.put(monthName, budget);
+        });
+        return transformedData;
+    }
+
+
+
+
+    // Utility method to transform month indices to month names with budget, for setting on the PieChart
 
 
     @FXML
@@ -398,9 +406,16 @@ public class marketingCRUD{
             marketingService.add(newMarketing);
 
             loadMarketingData();
+
             System.out.println("Marketing added successfully!");
             // Send an SMS notification
-            String message = "New marketing campaign added: " + titre + ". Check it out!";
+            String message = "New marketing campaign added: " + titre +
+                    ". Objective: " + objectif +
+                    ". Starts: " + dateDebut +
+                    ", Ends: " + dateFin +
+                    ". Budget: $" + budget +
+                    ". Check it out!";
+
             SmsService.sendSms("+21654113122", message);  // Replace "+1234567890" with your phone number or the recipient's number
 
             // Show a success message in the GUI

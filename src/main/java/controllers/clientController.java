@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -25,9 +26,15 @@ public class clientController {
     @FXML
     private FlowPane marketingFlowPane;
 
+
+
+
+
     public void initialize() throws SQLException {
         loadMarketingCards();
     }
+
+
 
     private void loadMarketingCards() {
         marketingService marketingService = new marketingService(); // Initialize your marketing service
@@ -82,4 +89,11 @@ public class clientController {
             e.printStackTrace(); // Handle exceptions, perhaps show an error message
         }
     }
+
+    public void refreshMarketingCards() {
+        loadMarketingCards();
+    }
+
+
+
 }

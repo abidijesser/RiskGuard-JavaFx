@@ -8,6 +8,7 @@ import utils.MyDatabase;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -20,7 +21,7 @@ import com.itextpdf.io.image.ImageDataFactory;
 
 import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
-
+import java.util.Map;
 
 
 public class marketingService implements IService<marketing> {
@@ -74,6 +75,23 @@ public class marketingService implements IService<marketing> {
         }
     }
 
+    public Map<Integer, Integer> getMonthlyBudget() {
+        Map<Integer, Integer> monthlyBudgets = new HashMap<>();
+        String query = "SELECT EXTRACT(MONTH FROM date_debut) AS month, SUM(budget) AS total_budget FROM marketing GROUP BY EXTRACT(MONTH FROM date_debut)";
+        try (Connection conn = MyDatabase.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next()) {
+                int month = rs.getInt("month");
+                int totalBudget = rs.getInt("total_budget");
+                monthlyBudgets.put(month, totalBudget);
+            }
+        } catch (SQLException e) {
+            System.err.println("SQL Error: " + e.getMessage());
+            // Optionally rethrow or handle the exception
+        }
+        return monthlyBudgets;
+    }
 
 
     // Example method to fetch marketing campaigns
