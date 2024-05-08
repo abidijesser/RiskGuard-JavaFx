@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="989.0" styleClass="root" stylesheets="@../CSS/styles.css" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.riskguard.crudjava.ReponseController">
+    <children>
+        <VBox prefHeight="532.0" prefWidth="199.0">
+            <children>
+                <AnchorPane fx:id="side_ankerpane" prefHeight="565.0" prefWidth="199.0" styleClass="side_ankerpane" stylesheets="@../CSS/styles.css">
+                    <children>
+                        <Button fx:id="btn_reclamation1" layoutX="7.0" layoutY="179.0" mnemonicParsing="false" onAction="#goreclamation" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Reclamation" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="btn_reclamation" layoutX="7.0" layoutY="245.0" mnemonicParsing="false" onAction="#sceneSwitch" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Reponse      " textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0" />
+                            </font>
+                        </Button>
+
+                        <ImageView fitHeight="34.0" fitWidth="30.0" layoutX="22.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/claim.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="btn_reponse" layoutX="7.0" layoutY="245.0" mnemonicParsing="false" onAction="#goreponse" onMouseClicked="#sceneSwitch" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Reponse      " textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="22.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/reponse.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="67.0" layoutX="76.0" layoutY="457.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../../../Downloads/438267351_1591128661739309_1152519402894951401_n.jpg" />
+                            </image>
+                        </ImageView>
+                  <ImageView blendMode="LIGHTEN" fitHeight="150.0" fitWidth="148.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo.png" />
+                     </image>
+                  </ImageView>
+                        <Button fx:id="btn_statistique" layoutX="7.0" layoutY="310.0" mnemonicParsing="false" onAction="#gostatistique" prefHeight="42.0" prefWidth="182.0" styleClass="btn_workbench11" stylesheets="@../CSS/styles.css" text="Statistique    " textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Century Gothic Bold" size="15.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="30.0" fitWidth="23.0" layoutX="26.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/statistique.png" />
+                            </image>
+                        </ImageView>
+                        <Button fx:id="btn_downloadPDF" layoutX="47.0" layoutY="417.0" onAction="#downloadResponsePDF" text="Télécharger PDF" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+        <Pane prefHeight="563.0" prefWidth="690.0">
+            <children>
+                <Pane prefHeight="80.0" prefWidth="690.0">
+                    <children>
+                        <TextField fx:id="txt_serach" layoutX="447.0" layoutY="26.0" prefHeight="28.0" prefWidth="197.0" promptText="Search ...">
+                            <font>
+                                <Font name="Century Gothic Bold Italic" size="14.0" />
+                            </font>
+                        </TextField>
+                        <ImageView fitHeight="23.0" fitWidth="30.0" layoutX="424.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/search.png" />
+                            </image>
+                        </ImageView>
+                        <Text layoutX="27.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Table des Réponses" wrappingWidth="339.13671875">
+                            <font>
+                                <Font name="Century Gothic Bold" size="22.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </Pane>
+                <AnchorPane layoutX="-2.0" layoutY="122.0" prefHeight="440.0" prefWidth="690.0">
+                    <children>
+                        <Pane layoutX="1.0" layoutY="-1.0" prefHeight="128.0" prefWidth="690.0">
+                            <children>
+                                <HBox layoutX="10.0" layoutY="8.0" prefHeight="102.0" prefWidth="675.0" styleClass="form_container">
+                                    <children>
+                                        <VBox prefHeight="96.0" prefWidth="476.0" styleClass="form_container" stylesheets="@../CSS/styles.css">
+                                            <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Votre Réponse à mettre" wrappingWidth="221.6710968017578" />
+                                                <TextField fx:id="tf_descReponse" prefHeight="25.0" prefWidth="177.0" promptText="reponse" styleClass="progress" stylesheets="@../CSS/styles.css">
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </TextField>
+                                            </children>
+                                            <HBox.margin>
+                                                <Insets right="5.0" top="10.0" />
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets right="10.0" />
+                                            </padding>
+                                            <opaqueInsets>
+                                                <Insets />
+                                            </opaqueInsets>
+                                        </VBox>
+                                        <VBox prefHeight="83.0" prefWidth="186.0" styleClass="form_container">
+                                            <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="ID Reclamation correspondant :" />
+                                                <TextField fx:id="tf_idreclamation" prefHeight="0.0" prefWidth="600.0" promptText="ID Reclamation" styleClass="progress">
+                                                    <VBox.margin>
+                                                        <Insets />
+                                                    </VBox.margin>
+                                                </TextField>
+                                            </children>
+                                            <HBox.margin>
+                                                <Insets right="5.0" top="10.0" />
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets right="10.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="1.0" layoutY="116.0" prefHeight="60.0" prefWidth="690.0">
+                            <children>
+                                <ButtonBar layoutX="108.0" layoutY="13.0" prefHeight="34.0" prefWidth="474.0" styleClass="form_container">
+                                    <buttons>
+                                        <Button fx:id="btn_ajoutrep" mnemonicParsing="false" onAction="#ajouterRep" stylesheets="@../CSS/styles.css" text="Ajouter" textFill="#1e0303">
+                                            <font>
+                                                <Font size="13.0" />
+                                            </font></Button>
+                                        <Button fx:id="btn_modrep" layoutX="302.0" layoutY="18.0" mnemonicParsing="false" onAction="#modifierRep" stylesheets="@../CSS/styles.css" text="Modifier" textFill="#070707" />
+                                        <Button fx:id="btn_supprep" layoutX="217.0" layoutY="18.0" mnemonicParsing="false" onAction="#supprimerRep" text="Supprimer" />
+                                        <Button fx:id="btn_annrep" layoutX="132.0" layoutY="18.0" mnemonicParsing="false" onAction="#annulerRep" text="Annuler" />
+                                    </buttons>
+                                </ButtonBar>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="1.0" layoutY="172.0" prefHeight="270.0" prefWidth="778.0">
+                            <children>
+                                <TableView fx:id="table_reponse" layoutX="19.0" layoutY="5.0" onMouseClicked="#getData" prefHeight="257.0" prefWidth="756.0">
+                                    <columns>
+                                        <TableColumn fx:id="col_idrep" prefWidth="65.0" text="ID Rep" />
+                                        <TableColumn fx:id="col_idrec" prefWidth="65.0" text="ID Rec" />
+                                        <TableColumn fx:id="col_description" prefWidth="260.0" text="Reclamation" />
+                                        <TableColumn fx:id="col_contenu" prefWidth="230.0" text="Reponse" />
+                                        <TableColumn fx:id="col_date" minWidth="0.0" prefWidth="140.0" text="Date du réponse" />
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </Pane>
+    </children>
+</HBox>

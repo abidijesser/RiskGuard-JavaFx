@@ -3,6 +3,9 @@ module com.example.pidev {
     requires javafx.fxml;
     requires javafx.web;
 
+    exports com.riskguard.crudjava to javafx.fxml;
+    opens com.riskguard.crudjava to javafx.fxml, javafx.base;
+
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
@@ -16,11 +19,10 @@ module com.example.pidev {
     requires com.google.zxing.javase;
     requires java.mail;
 
-
-    opens com.example.pidev to javafx.fxml;
+    opens com.example.pidev to javafx.fxml, javafx.base;
     exports com.example.pidev.test;
-    opens com.example.pidev.test to javafx.fxml;
+    opens com.example.pidev.test to javafx.fxml, javafx.base;
     exports controllers;
-    opens controllers;
-    opens entites;
+    opens controllers to javafx.fxml, javafx.base;
+    opens entites to javafx.base;
 }
