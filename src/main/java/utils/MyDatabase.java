@@ -6,14 +6,14 @@ import java.sql.SQLException;
 
 public class MyDatabase {
 
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/riskguard-pidev";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    public static final String URL = "jdbc:mysql://127.0.0.1:3306/riskguard-pidev";
+    public static final String USER = "root";
+    public static final String PASSWORD = "";
 
-    private Connection connection;
-    private static MyDatabase instance;
+    public Connection connection;
+    public static MyDatabase instance;
 
-    private MyDatabase() {
+    public MyDatabase() {
         try {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("Connected");
@@ -29,6 +29,11 @@ public class MyDatabase {
     }
 
     public Connection getConnection() {
-        return connection;
+        try {
+            return DriverManager.getConnection(URL, USER, PASSWORD);
+        } catch (SQLException e) {
+            System.err.println("Database Connection Failed: " + e.getMessage());
+            return null;
+        }
     }
 }

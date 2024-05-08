@@ -68,13 +68,12 @@ public class addClientController {
                     telephoneTF.getText().trim().isEmpty() ||
                     dateDeNaissanceTF.getText().trim().isEmpty() ||
                     cinTF.getText().trim().isEmpty() ||
-                    adresseDomicileTF.getText().trim().isEmpty() )
-            {
+                    adresseDomicileTF.getText().trim().isEmpty() ) {
 
-                // Affichez un message d'erreur ou alerte
                 showAlert("Erreur de saisie", "Tous les champs doivent être remplis.");
-                return; // Stop the method here
+                return;
             }
+
             // Assuming the date format in the text field is yyyy-MM-dd
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate dateDeNaissance = LocalDate.of(2000, 1, 1);
@@ -88,21 +87,11 @@ public class addClientController {
                     adresseDomicileTF.getText(),
                     cinTF.getText()
             );
-//            newClient.setNom(nameTF.getText());
-//            newClient.setPrenom(prenomTF.getText());
-//            newClient.setEmail("gamma@gmail.com");
-//            newClient.setMotDePasse("22222222"); // Consider hashing the password
-//            newClient.setTelephone("25399797");
-//            newClient.setDateDeNaissance(dateDeNaissance);
-//            newClient.setCin(cinTF.getText());
-//            newClient.setAdresseDomicile("ariana soghra");
 
-            // Call the service to add the new client
             clientService.add(newClient);
             showSuccessAlert("Succès", "Le client a été ajouté avec succès.");
-
-            // Optionally clear the text fields after successful addition
             clearForm();
+
         } catch (DateTimeParseException e) {
             System.err.println("The date of birth is in an invalid format.");
         } catch (SQLException e) {
@@ -110,6 +99,7 @@ public class addClientController {
         } catch (Exception e) {
             System.err.println("An error occurred: " + e.getMessage());
         }
+
     }
 
     private void clearForm() {

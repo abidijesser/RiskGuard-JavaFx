@@ -1,15 +1,10 @@
-services\BookServices.class
 services\IService.class
 models\Admin.class
 controllers\addClientController.class
-models\BankAccount.class
-services\UserService.class
 services\clientService.class
 test\Main.class
 utils\MyDatabase.class
-controllers\addUser.class
-models\User.class
 models\Client.class
-controllers\getUser.class
 models\AbstractUtilisateur.class
+controllers\loginController.class
 test\MainFX.class

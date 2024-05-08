@@ -9,7 +9,7 @@ import java.util.List;
 
 public class clientService implements IService<Client> {
 
-    private Connection connection;
+    public Connection connection;
 
     public clientService() {
         connection = MyDatabase.getInstance().getConnection();
@@ -26,7 +26,7 @@ public class clientService implements IService<Client> {
         try (
                 PreparedStatement psAbstractUser = connection.prepareStatement(sqlAbstractUser, Statement.RETURN_GENERATED_KEYS);
                 PreparedStatement psClient = connection.prepareStatement(sqlClient);
-                )
+            )
         {
             psAbstractUser.setString(1, client.getNom());
             psAbstractUser.setString(2, client.getPrenom());
