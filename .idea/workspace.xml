@@ -6,18 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="cc2ca695-f0c7-4c1b-94a7-a6ba327a7070" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VieDetails.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/VieDetails.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/EmployeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/EmployeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/VehiculeEmployeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/VehiculeEmployeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/vieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/vieController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/VehiculeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/VehiculeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/VieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/VieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ults/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ults/DB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pidev/VehiculeEmploye.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pidev/VehiculeEmploye.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pidev/css/listvie.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pidev/css/listvie.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pidev/css/vehiculeEmploye.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pidev/css/vehiculeEmploye.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pidev/css/vie.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pidev/css/vie.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pidev/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pidev/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/employe.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/employe.fxml" afterDir="false" />
     </list>
@@ -159,7 +157,13 @@
       <workItem from="1714566658211" duration="3547000" />
       <workItem from="1714586156942" duration="5186000" />
       <workItem from="1714603120785" duration="1092000" />
-      <workItem from="1714605111309" duration="721000" />
+      <workItem from="1714605111309" duration="5797000" />
+      <workItem from="1714610950528" duration="1216000" />
+      <workItem from="1714638604136" duration="913000" />
+      <workItem from="1714947475418" duration="8607000" />
+      <workItem from="1715111975576" duration="365000" />
+      <workItem from="1715123508329" duration="279000" />
+      <workItem from="1715123798101" duration="3407000" />
     </task>
     <servers />
   </component>

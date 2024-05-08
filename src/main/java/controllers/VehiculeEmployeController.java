@@ -243,7 +243,7 @@ public class VehiculeEmployeController {
             }
         });
 
-}
+    }
     public void deleteveh() {
         // Get the selected vehicle from the table
         Vehicule selectedVehicule = tableve.getSelectionModel().getSelectedItem();
@@ -303,8 +303,4 @@ public class VehiculeEmployeController {
             // Handle exception
         }}
 
-    }
-
-
-
-
+}

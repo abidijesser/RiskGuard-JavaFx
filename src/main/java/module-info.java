@@ -12,6 +12,9 @@ module com.example.pidev {
     requires com.almasb.fxgl.all;
     requires java.desktop;
     requires itextpdf;
+    requires com.google.zxing;
+    requires com.google.zxing.javase;
+
 
     opens com.example.pidev to javafx.fxml;
     exports com.example.pidev.test;

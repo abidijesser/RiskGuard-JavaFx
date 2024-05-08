@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="560.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EmployeController">
+<AnchorPane prefHeight="560.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.EmployeController" styleClass="root"  stylesheets="@com/example/pidev/css/listvie.css">
     <children>
         <TableView fx:id="liste" layoutX="43.0" layoutY="62.0" prefHeight="416.0" prefWidth="608.0" styleClass="TableView" stylesheets="@com/example/pidev/css/listvie.css">
             <columns>

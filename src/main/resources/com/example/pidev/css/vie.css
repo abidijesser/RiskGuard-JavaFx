@@ -3,6 +3,13 @@
     -fx-spacing: 20; /* Spacing between child nodes */
     -fx-alignment: center; /* Alignment of child nodes within the VBox */
 }
+/* styles.css */
+
+.root {
+    -fx-background-image: url('../images/252265819.jpg');
+    -fx-background-size: cover;
+}
+
 
 /* Style for TextField */
 .text-field {
@@ -17,7 +24,7 @@
     -fx-text-fill: #495057; /* Text color */
 }
 .tooltip {
-    -fx-background-color: #343a40; /* Background color */
+    -fx-background-color: #B3001BFF; /* Background color */
     -fx-text-fill: white; /* Text color */
     -fx-font-size: 12px; /* Font size */
     -fx-padding: 4px 8px; /* Padding */
@@ -27,7 +34,7 @@
 }
 /* Style for Button */
 .button {
-    -fx-background-color: #007bff; /* Background color */
+    -fx-background-color: #002ab3; /* Background color */
     -fx-text-fill: white; /* Text color */
     -fx-font-size: 14px; /* Font size */
     -fx-padding: 10 20; /* Padding */
@@ -38,27 +45,42 @@
 
 /* Hover effect for Button */
 .button:hover {
-    -fx-background-color: #0056b3; /* Background color on hover */
+    -fx-background-color: #b564db; /* Background color on hover */
 }
 
 
 /* Style for Text */
 .text {
     -fx-font-size: 16px; /* Font size */
-    -fx-text-fill: #343a40; /* Text color */
+    -fx-text-fill: #B3001BFF; /* Text color */
     -fx-font-weight: bold; /* Bold text */
     -fx-padding: 5; /* Padding */
+
 }
 /* Style for Title */
-.title-text {
-    -fx-font-size: 24px; /* Font size */
-    -fx-text-fill: #212529; /* Text color */
-    -fx-font-weight: bold; /* Bold text */
-}
+
 
 /* Style for Subtitle */
 .subtitle-text {
     -fx-font-size: 18px; /* Font size */
-    -fx-text-fill: #6c757d; /* Text color */
+    -fx-text-fill: #200abb; /* Text color */
     -fx-font-weight: bold; /* Bold text */
+
+    -fx-font-family: "Arial", sans-serif; /* Font family */
+    -fx-background-color: #06b3ec; /* Background color */}
+.green-text {
+    -fx-font-size: 16px; /* Font size */
+    -fx-fill: #06b3ec; /* Green text color */
+    -fx-font-weight: bold; /* Bold text */
+    -fx-padding: 5; /* Padding */
+}
+
+/* Style for TextFlow */
+.text-flow#LL {
+    -fx-background-color: #06b3ec;
+}
+
+/* Style for TextArea */
+.text-area {
+    -fx-background-color: #002ab3;
 }

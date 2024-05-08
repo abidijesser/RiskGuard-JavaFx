@@ -74,3 +74,8 @@
 .button#updateve:pressed {
     -fx-background-color: #004080; /* Even darker blue when pressed */
 }
+.root {
+    -fx-background-image: url('../images/toa-heftiba-JQcMFXSj6XY-unsplash.jpg');
+    -fx-background-size: cover;
+
+}

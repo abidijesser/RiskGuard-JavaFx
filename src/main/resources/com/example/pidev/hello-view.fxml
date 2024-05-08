@@ -7,36 +7,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
-
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.vieController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.vieController" stylesheets="@css/vie.css" styleClass="root">
 
    <children>
-      <VBox prefHeight="235.0" prefWidth="723.0">
+      <VBox fx:id="VBOX1" prefHeight="235.0" prefWidth="723.0">
          <children>
-            <TextFlow prefHeight="200.0" prefWidth="200.0" styleClass="text-field" stylesheets="@css/vie.css">
+            <TextFlow fx:id="II"  prefHeight="100.0" prefWidth="100.0" styleClass="text-field" stylesheets="@css/vie.css">
                <children>
-                  <TextArea prefHeight="130.0" prefWidth="798.0" styleClass="subtitle-text" stylesheets="@css/vie.css" text="                                                           Riskguard     &#10;&#10;&#10;constat vie :                                          " />
+                  <TextArea prefHeight="100.0" prefWidth="798.0" styleClass="subtitle-text" stylesheets="@css/vie.css" text="                                                           Riskguard     &#10;&#10;&#10;constat vie :                                          " />
                </children>
             </TextFlow>
          </children>
       </VBox>
-      <VBox prefHeight="269.0" prefWidth="822.0" styleClass="text-field" stylesheets="@css/vie.css">
+      <VBox fx:id="VBOX2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"  stylesheets="@css/vie.css">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
+            <Text fx:id="n" styleClass="green-text" strokeType="OUTSIDE" strokeWidth="0.0" text="NOM">
                <VBox.margin>
                   <Insets left="10.0" />
                </VBox.margin>
             </Text>
             <TextField fx:id="nom" prefHeight="0.0" prefWidth="484.0" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PRENOM">
+            <Text  fx:id="p" styleClass="green-text" strokeType="OUTSIDE" strokeWidth="0.0" text="PRENOM">
                <VBox.margin>
                   <Insets left="10.0" />
                </VBox.margin>
             </Text>
             <TextField fx:id="prenom" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CIN">
+            <Text fx:id="c" styleClass="green-text" strokeType="OUTSIDE" strokeWidth="0.0" text="CIN">
                <VBox.margin>
                   <Insets left="10.0" />
                </VBox.margin>
@@ -46,19 +46,19 @@
                   <Insets />
                </VBox.margin>
             </TextField>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cause de deces">
+            <Text fx:id="cc" styleClass="green-text" strokeType="OUTSIDE" strokeWidth="0.0" text="Cause de deces">
                <VBox.margin>
                   <Insets left="10.0" />
                </VBox.margin>
             </Text>
             <TextField fx:id="causededeces" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date de deces">
+            <Text fx:id="dd" styleClass="green-text" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de deces">
                <VBox.margin>
                   <Insets left="5.0" />
                </VBox.margin>
             </Text>
             <TextField fx:id="datededeces" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant de L informant">
+            <Text fx:id="inf" styleClass="green-text" strokeType="OUTSIDE" strokeWidth="0.0" text="Identifiant de L informant">
                <VBox.margin>
                   <Insets left="5.0" />
                </VBox.margin>
