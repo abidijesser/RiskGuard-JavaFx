@@ -6,9 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ResetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ResetPasswordController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/clientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/clientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/clientUpdate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/clientUpdate.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/ResetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/ResetPasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/clientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/clientService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +204,7 @@
       <workItem from="1715123798101" duration="3407000" />
       <workItem from="1715180019519" duration="2702000" />
       <workItem from="1715197666667" duration="796000" />
-      <workItem from="1715229397487" duration="3297000" />
+      <workItem from="1715229397487" duration="7569000" />
     </task>
     <servers />
   </component>

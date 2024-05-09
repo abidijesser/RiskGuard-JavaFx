@@ -3,6 +3,8 @@ package services;
 import models.Client;
 import models.AbstractUtilisateur;
 import utils.MyDatabase;
+import org.mindrot.jbcrypt.BCrypt;
+
 
 import java.sql.*;
 import java.util.List;
@@ -17,21 +19,21 @@ public class clientService implements IService<Client> {
 
     @Override
     public void add(Client client) throws SQLException {
+        String hashedPassword = BCrypt.hashpw(client.getMotDePasse(), BCrypt.gensalt());
 
         String sqlAbstractUser = "INSERT INTO abstract_utilisateur " +
-            "(nom, prenom, email, mot_de_passe, telephone, date_de_naissance, type) VALUES (?, ?, ?, ?, ?, ?, ?)";
+                "(nom, prenom, email, mot_de_passe, telephone, date_de_naissance, type) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         String sqlClient = "INSERT INTO client (id, cin, adresse_domicile) VALUES (?, ?, ?)";
 
         try (
                 PreparedStatement psAbstractUser = connection.prepareStatement(sqlAbstractUser, Statement.RETURN_GENERATED_KEYS);
                 PreparedStatement psClient = connection.prepareStatement(sqlClient);
-            )
-        {
+        ) {
             psAbstractUser.setString(1, client.getNom());
             psAbstractUser.setString(2, client.getPrenom());
             psAbstractUser.setString(3, client.getEmail());
-            psAbstractUser.setString(4, client.getMotDePasse()); // Ensure this is hashed if necessary
+            psAbstractUser.setString(4, hashedPassword);  // Store the hashed password
             psAbstractUser.setString(5, client.getTelephone());
             psAbstractUser.setDate(6, java.sql.Date.valueOf(client.getDateDeNaissance()));
             psAbstractUser.setString(7, "client");
@@ -52,6 +54,7 @@ public class clientService implements IService<Client> {
             }
         }
     }
+
 
     @Override
     public void update(Client client) throws SQLException {

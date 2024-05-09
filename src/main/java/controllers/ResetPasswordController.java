@@ -1,6 +1,7 @@
 package controllers;
 
 import DTO.OTPUserId;
+import org.mindrot.jbcrypt.BCrypt;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -276,11 +277,11 @@ public class ResetPasswordController {
 
 
     private void updatePassword(String newPassword, ActionEvent event) {
-        // Placeholder for the database update logic
+        String hashedPassword = BCrypt.hashpw(newPassword, BCrypt.gensalt());
         String query = "UPDATE abstract_utilisateur SET mot_de_passe = ? WHERE id = ?";
         try (Connection conn = MyDatabase.getInstance().getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
-            pstmt.setString(1, newPassword); // Assuming you hash the password before storing
+            pstmt.setString(1, hashedPassword); // Assuming you hash the password before storing
             System.out.println(this.userId);
             System.out.println(otpUserId.getReserveId());
 

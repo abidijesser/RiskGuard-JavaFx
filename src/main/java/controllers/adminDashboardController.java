@@ -2,16 +2,24 @@ package controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.stage.Stage;
 import models.Client;
 import utils.MyDatabase;
 import javafx.scene.control.*;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,6 +43,24 @@ public class adminDashboardController {
     @FXML
     private TableColumn<Client, Void> actionColumn;
 
+    @FXML
+    private Label nomErrorTF;
+
+    @FXML
+    private Label prenomErrorTF;
+
+    @FXML
+    private Label emailErrorTF;
+
+    @FXML
+    private Label telephoneErrorTF;
+
+    @FXML
+    private Label cinErrorTF;
+
+    @FXML
+    private TextField cinTF, nameTF, emailTF, prenomTF, telephoneTF;
+
     private ObservableList<Client> clients = FXCollections.observableArrayList();
 
     private void addActionButtons() {
@@ -55,6 +81,8 @@ public class adminDashboardController {
                                 confirmAndDelete(client);
                             }
                         });
+
+                        btnEdit.setOnAction(adminDashboardController.this::navigateToModify);
                     }
 
                     @Override
@@ -207,6 +235,92 @@ public class adminDashboardController {
         }
     }
 
+    public void navigateToModify(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/clientUpdate.fxml"));
+            if (loader.getLocation() == null) {
+                throw new IOException("The specified FXML file was not found.");
+            }
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            showAlert("Load Error", "Failed to load the update form: " + e.getMessage());
+        }
+    }
+
+
+
+
+    @FXML
+    void handleCancelAction(ActionEvent event) {
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    private boolean validateInputs() {
+        boolean isValid = true;
+
+        // Clear previous error messages
+        nomErrorTF.setText("");
+        prenomErrorTF.setText("");
+        emailErrorTF.setText("");
+        telephoneErrorTF.setText("");
+        cinErrorTF.setText("");
+
+        // Name validation
+        if (nameTF.getText().isEmpty()) {
+            nomErrorTF.setText("Champs requis.");
+            isValid = false;
+        }
+
+        // Surname validation
+        if (prenomTF.getText().isEmpty()) {
+            prenomErrorTF.setText("Champs requis.");
+            isValid = false;
+        }
+
+        // Email validation
+        if (emailTF.getText().isEmpty()) {
+            emailErrorTF.setText("Champs requis.");
+            isValid = false;
+        }
+
+        // Telephone validation
+        if (telephoneTF.getText().isEmpty()) {
+            telephoneErrorTF.setText("Champs requis.");
+            isValid = false;
+        } else if (!telephoneTF.getText().matches("^[259]\\d{7}$")) {
+            telephoneErrorTF.setText("Doit commencer par 2, 5, ou 9 et contenir 8 chiffres.");
+            isValid = false;
+        }
+
+        // CIN validation
+        if (cinTF.getText().isEmpty()) {
+            cinErrorTF.setText("Champs requis.");
+            isValid = false;
+        } else if (!cinTF.getText().matches("\\d{8}")) {
+            cinErrorTF.setText("Doit contenir exactement 8 chiffres.");
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    @FXML
+    void handleSubmitAction(ActionEvent event) {
+        if (validateInputs()) {
+            // Process the form or show a success message
+            showSuccessAlert("Validation Réussie", "Les données sont valides.");
+            // You can call a method here to process the data
+        } else {
+            showAlert("Erreur de Validation", "Veuillez corriger les erreurs.");
+        }
+    }
 
 
 

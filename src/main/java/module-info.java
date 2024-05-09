@@ -22,6 +22,7 @@ module com.example.pidev {
     requires layout;
     requires kernel;
     requires io;
+    requires jbcrypt;
 
     opens com.example.pidev to javafx.fxml, javafx.base;
     exports com.example.pidev.test;
