@@ -19,7 +19,7 @@ public class MainFX extends Application {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/adminDashboard.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        primaryStage.setTitle("");
+        primaryStage.setTitle("RiskGuard");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
