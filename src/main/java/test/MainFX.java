@@ -12,10 +12,13 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage primaryStage)  throws  Exception{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ResetPasswordEmailVerification.fxml"));
+       // FXMLLoader loader = new FXMLLoader(getClass().getResource("/resetPasswordEmailVerification.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/addClient.fxml"));
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/resetPassword.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Login");
+        primaryStage.setTitle("");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
