@@ -15,6 +15,11 @@ public class MainFX extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // Load and display the Marketing interface
+        // FXMLLoader loader = new FXMLLoader(getClass().getResource("/resetPasswordEmailVerification.fxml"));
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/addClient.fxml"));
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("/resetPassword.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/adminDashboard.fxml"));
         FXMLLoader marketingLoader = new FXMLLoader(getClass().getResource("/marketingCRUD.fxml"));
         Parent marketingRoot = marketingLoader.load();
         Scene marketingScene = new Scene(marketingRoot);

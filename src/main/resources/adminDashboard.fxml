@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #EBF5FF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.adminDashboardController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="11.0" layoutY="44.0" text="Menu" textFill="#1d00c3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Line endX="100.0" layoutX="101.0" layoutY="71.0" startX="-100.0" stroke="#b2b2b2" strokeWidth="0.5" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tableView" layoutX="211.0" layoutY="79.0" prefHeight="513.0" prefWidth="787.0">
+          <columns>
+              <TableColumn fx:id="nomColumn" prefWidth="82.0" text="Nom" />
+              <TableColumn fx:id="prenomColumn" prefWidth="98.0" text="Prenom" />
+              <TableColumn fx:id="emailColumn" prefWidth="168.0" text="Email" />
+              <TableColumn fx:id="telephoneColumn" prefWidth="110.0" text="Télephone" />
+              <TableColumn fx:id="cinColumn" prefWidth="105.0" text="CIN" />
+              <TableColumn fx:id="actionColumn" prefWidth="223.0" text="Action" />
+          </columns>
+      </TableView>
+      <AnchorPane layoutX="202.0" layoutY="-1.0" prefHeight="70.0" prefWidth="805.0" style="-fx-background-color: white;">
+         <children>
+            <TextField fx:id="searchBarTF" layoutX="265.0" layoutY="19.0" prefHeight="32.0" prefWidth="276.0" promptText="Rechercher . . ." style="-fx-background-color: #C2D1FF; -fx-padding: 5px;" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

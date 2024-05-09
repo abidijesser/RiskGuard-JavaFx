@@ -1,10 +1,7 @@
 package test;
 
-
-
 import models.marketing; // Import the Marketing class if not already imported
 import services.marketingService; // Import the MarketingService class
-
 
 import java.sql.SQLException;
 import java.util.List;
@@ -12,7 +9,6 @@ import java.util.List;
 public class Main extends Object {
 
     public static void main(String[] args) {
-
 
         marketingService marketingService = new marketingService(); // Create an instance of MarketingService
         try {
@@ -25,6 +21,5 @@ public class Main extends Object {
         } catch (SQLException e) {
             System.err.println("Error fetching marketing data: " + e.getMessage());
         }
-
     }
 }

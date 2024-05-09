@@ -1,0 +1,20 @@
+<<<<<<< HEAD
+=======
+DTO\OTPUserId.class
+utils\EmailUtil.class
+services\clientService.class
+test\Main.class
+utils\MyDatabase.class
+models\AbstractUtilisateur.class
+controllers\loginController.class
+controllers\adminDashboardController$1$1.class
+controllers\ResetPasswordController.class
+test\MainFX.class
+services\IService.class
+models\Admin.class
+controllers\addClientController.class
+controllers\adminDashboardController$1.class
+models\Client.class
+controllers\adminDashboardController.class
+utils\EmailUtil$1.class
+>>>>>>> jesser

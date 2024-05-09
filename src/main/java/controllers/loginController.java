@@ -1,6 +1,10 @@
 package controllers;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -8,6 +12,8 @@ import javafx.scene.control.PasswordField;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.sql.*;
+
+import javafx.stage.Stage;
 import utils.MyDatabase;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -87,6 +93,8 @@ public class loginController {
                     emailErrorMessageTF.setText("");
                     break;
                 case 2:
+                    passwordErrorMessageTF.setText("");
+                    emailErrorMessageTF.setText("");
                     showSuccessAlert("Succès", "Connexion réussie !");
                     break;
                 default:
@@ -96,27 +104,6 @@ public class loginController {
         }
     }
 
-//    public void connection(){
-//        MyDatabase connection= new MyDatabase();
-//        Connection login = connection.getConnection();
-//
-//        String loginQuery = "SELECT count(1) FROM abstract_utilisateur WHERE email=? AND password=?";
-//        try (Connection conn = dataSource.getConnection();
-//             PreparedStatement pstmt = conn.prepareStatement(loginQuery)) {
-//            pstmt.setString(1, userEmailTF.getText());
-//            pstmt.setString(2, userPasswordTF.getText());
-//            try (ResultSet rs = pstmt.executeQuery()) {
-//                if (rs.next() && rs.getInt(1) > 0) {
-//                    // Valid login
-//                } else {
-//                    // Invalid login
-//                }
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
 
     private int isValidLogin(String email, String mot_de_passe) {
         String checkUser = "SELECT mot_de_passe FROM abstract_utilisateur WHERE email = ?";
@@ -125,12 +112,12 @@ public class loginController {
             pstmt.setString(1, email);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    // Email exists, now check password
+
                     String storedPassword = rs.getString("mot_de_passe");
                     if (storedPassword.equals(mot_de_passe)) {
-                        return 2; // Login successful
+                        return 2;
                     } else {
-                        return 1; // Password incorrect
+                        return 1;
                     }
                 }
             }
@@ -139,6 +126,43 @@ public class loginController {
         }
         return 0; // User not found
     }
+
+    public void navigateToRestPassword(ActionEvent event) {
+        try {
+
+            Node source = (Node) event.getSource();
+            Stage currentStage = (Stage) source.getScene().getWindow();
+            currentStage.close();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/resetPasswordEmailVerification.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void navigateToSignup(ActionEvent event) {
+        try {
+
+            Node source = (Node) event.getSource();
+            Stage currentStage = (Stage) source.getScene().getWindow();
+            currentStage.close();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/addClient.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage newStage = new Stage();
+            newStage.setScene(scene);
+            newStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 
