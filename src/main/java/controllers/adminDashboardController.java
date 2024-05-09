@@ -81,6 +81,24 @@ public class adminDashboardController {
         });
     }
 
+    public void showAlert(String title, String content) {
+        // Créez ici une alerte avec JavaFX
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+
+        alert.showAndWait();
+    }
+
+    public void showSuccessAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
 
     public void initialize() {
         nomColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
@@ -98,7 +116,7 @@ public class adminDashboardController {
     private ObservableList<Client> getClients() {
         ObservableList<Client> clients = FXCollections.observableArrayList();
         Connection con = MyDatabase.getInstance().getConnection();
-        String query = "SELECT u.nom, u.prenom, u.email, u.telephone, c.cin " +
+        String query = "SELECT u.id, u.nom, u.prenom, u.email, u.telephone, c.cin " +
                 "FROM abstract_utilisateur u JOIN client c ON u.id = c.id " +
                 "WHERE u.type = 'client'";
 
@@ -110,12 +128,13 @@ public class adminDashboardController {
                         rs.getString("nom"),
                         rs.getString("prenom"),
                         rs.getString("email"),
-                        null,
+                        null,  // mot_de_passe is typically not retrieved for security reasons
                         rs.getString("telephone"),
-                        null,
-                        null,
+                        null,  // date_de_naissance is not used in the dashboard
+                        null,  // adresseDomicile is not used in the dashboard
                         rs.getString("cin")
                 );
+                client.setId(rs.getInt("id"));  // Set the ID retrieved from the database
                 clients.add(client);
             }
         } catch (Exception e) {
@@ -123,6 +142,11 @@ public class adminDashboardController {
         }
         return clients;
     }
+
+    private void refreshClientTable() {
+        tableView.setItems(getClients());  // Fetch new data and update TableView
+    }
+
     private void confirmAndDelete(Client client) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation de suppression");
@@ -133,6 +157,7 @@ public class adminDashboardController {
             if (response == ButtonType.OK) {
                 deleteClient(client);
                 clients.remove(client);
+                refreshClientTable();
             }
         });
     }
@@ -144,21 +169,20 @@ public class adminDashboardController {
 
         try {
             con = MyDatabase.getInstance().getConnection();
-            con.setAutoCommit(false);  // Start transaction
+            con.setAutoCommit(false);
 
-            // First, delete from the client table where the foreign key to abstract_utilisateur might exist
             String queryClient = "DELETE FROM client WHERE id = ?";
             pstmtClient = con.prepareStatement(queryClient);
-            pstmtClient.setInt(1, client.getId()); // Assuming getId() fetches the id
+            pstmtClient.setInt(1, client.getId());
             pstmtClient.executeUpdate();
 
-            // Then, delete from the abstract_utilisateur table
             String queryUser = "DELETE FROM abstract_utilisateur WHERE id = ?";
             pstmtUser = con.prepareStatement(queryUser);
             pstmtUser.setInt(1, client.getId());
             pstmtUser.executeUpdate();
 
-            con.commit();  // Commit transaction if both deletions are successful
+            con.commit();
+            showSuccessAlert("Succes ", "Suppression faite avec succes.");
 
         } catch (Exception e) {
             try {
@@ -167,10 +191,7 @@ public class adminDashboardController {
                 e.printStackTrace();
             }
             e.printStackTrace();
-            Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-            errorAlert.setHeaderText("Erreur de suppression");
-            errorAlert.setContentText("Impossible de supprimer le client : " + e.getMessage());
-            errorAlert.showAndWait();
+            showAlert("Erreur de suppression", "Impossible de supprimer le client : " + e.getMessage());
         } finally {
             // Close resources
             try {
@@ -185,6 +206,7 @@ public class adminDashboardController {
             }
         }
     }
+
 
 
 

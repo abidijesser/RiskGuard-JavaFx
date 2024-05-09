@@ -5,41 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DTO/OTPUserId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/adminDashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/resetPassword.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/signupImage.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/DTO/OTPUserId.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/adminDashboard.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/resetPassword.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/signupImage.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/OTPVerification.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ResetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ResetPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/addClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/addClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/MainFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/addClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/addClient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/addClient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/addClient.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/OTPVerification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/OTPVerification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/ResetPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/ResetPasswordController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/addClientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/addClientController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/loginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/clientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/clientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/MainFX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/MyDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/MyDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging testMerge2",
+    "git-widget-placeholder": "testMerge2",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/Users/Taha/IdeaProjects/pidev/src/main/java/com/example/pidev",
@@ -226,12 +195,23 @@
       <workItem from="1715123798101" duration="3407000" />
       <workItem from="1715180019519" duration="2702000" />
       <workItem from="1715197666667" duration="796000" />
-      <workItem from="1715229397487" duration="721000" />
+      <workItem from="1715229397487" duration="3297000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
