@@ -281,15 +281,16 @@ public class ResetPasswordController {
         String query = "UPDATE abstract_utilisateur SET mot_de_passe = ? WHERE id = ?";
         try (Connection conn = MyDatabase.getInstance().getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
-            pstmt.setString(1, hashedPassword); // Assuming you hash the password before storing
+            pstmt.setString(1, hashedPassword);
             System.out.println(this.userId);
             System.out.println(otpUserId.getReserveId());
 
-            pstmt.setInt(2, otpUserId.getReserveId()); // Assumes you have the user's email
+            pstmt.setInt(2, otpUserId.getReserveId());
 
             int affectedRows = pstmt.executeUpdate();
             if (affectedRows > 0) {
                 showSuccessAlert("Mise à jour réussie", "Votre mot de passe a été réinitialisé avec succès.");
+                otpUserId.setUserIdNull();
                 navigateBackToLogin(event);
             } else {
                 showAlert("Erreur de mise à jour", "La mise à jour du mot de passe a échoué.");

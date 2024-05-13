@@ -33,4 +33,6 @@ module com.example.pidev {
 
     // Open the models package to javafx.base to allow property access
     opens models to javafx.base;
+    exports com.assurance.assurancess.controller to javafx.fxml;
+    opens com.assurance.assurancess.controller to javafx.fxml;
 }

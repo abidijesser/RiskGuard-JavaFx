@@ -2,9 +2,9 @@ package DTO;
 
 public class OTPUserId {
 
-    private int userId;
+    public int userId;
 
-    private static int  reserveId ;
+    public static int  reserveId ;
 
     public OTPUserId(int userId) {
         this.userId = userId;
@@ -24,5 +24,10 @@ public class OTPUserId {
     }
     public int getReserveId() {
         return reserveId;
+    }
+
+    public void setUserIdNull() {
+        this.userId = 0;
+        this.reserveId=0;
     }
 }
