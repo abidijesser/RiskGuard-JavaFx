@@ -6,17 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/La Liste des employee.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/La Liste des employee.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VieDetails.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/VieDetails.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTO/OTPUserId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTO/OTPUserId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/entities/TwilioSMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/entities/TwilioSMS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/PDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/PDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ResetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ResetPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/clientUpdate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/clientUpdate.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pdf/test.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pdf/test.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +195,7 @@
       <workItem from="1715180019519" duration="2702000" />
       <workItem from="1715197666667" duration="796000" />
       <workItem from="1715229397487" duration="13559000" />
-      <workItem from="1715550503955" duration="13963000" />
+      <workItem from="1715550503955" duration="15943000" />
     </task>
     <servers />
   </component>
