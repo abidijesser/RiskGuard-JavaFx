@@ -6,7 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/AjoutAssuranceVehiculeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/AjoutAssuranceVehiculeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/AssuranceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/AssuranceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/adminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/clientUpdate.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/clientUpdate.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/listass.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/listass.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/listassveh.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/listassveh.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Fxml/listass.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Fxml/listass.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Fxml/listassveh.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Fxml/listassveh.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/adminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/adminDashboard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +72,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/Taha/IdeaProjects/pidev/src/main/java/com/example/pidev&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Taha/Desktop/SceneBuilder.lnk&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Yosri Elhadj/Documents/workshopPidev2324/src/main/resources&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -73,6 +84,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Yosri Elhadj\Documents\workshopPidev2324\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Taha\IdeaProjects\pidev\src\main\resources\com\example\pidev\images" />
     </key>
@@ -195,7 +209,8 @@
       <workItem from="1715180019519" duration="2702000" />
       <workItem from="1715197666667" duration="796000" />
       <workItem from="1715229397487" duration="13559000" />
-      <workItem from="1715550503955" duration="15943000" />
+      <workItem from="1715550503955" duration="21830000" />
+      <workItem from="1715634434972" duration="3697000" />
     </task>
     <servers />
   </component>

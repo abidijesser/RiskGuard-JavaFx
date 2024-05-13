@@ -14,7 +14,7 @@
                 <URL value="@css/listassveh.css"></URL>
             </stylesheets>
             <!-- Champ de texte pour la recherche -->
-            <TextField fx:id="rechercheField" onAction="#recherche" promptText="Recherche..." />
+            <TextField fx:id="rechercheField" onAction="#rechercherAssuranceVehicule" promptText="Recherche..." />
             <!-- Bouton "Recherche" -->
             <Button fx:id="button" onAction="#rechercherAssuranceVehicule" text="Recherche" />
             <!-- Bouton "Return" dans la partie supérieure -->

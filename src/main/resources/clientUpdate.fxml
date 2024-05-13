@@ -6,46 +6,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #EBF5FF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.updateClientController">
+<AnchorPane prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: #EBF5FF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.updateClientController">
    <children>
-      <AnchorPane layoutX="91.0" prefHeight="500.0" prefWidth="418.0" style="-fx-background-color: white;">
+      <AnchorPane layoutX="91.0" layoutY="33.0" prefHeight="483.0" prefWidth="418.0" style="-fx-background-color: white; -fx-border-color: #F9F9F9; -fx-border-radius: 5px; -fx-border-width: 2px;">
          <children>
-            <Label layoutX="20.0" layoutY="51.0" prefHeight="17.0" prefWidth="59.0" text="Nom">
+            <Label layoutX="20.0" layoutY="62.0" prefHeight="17.0" prefWidth="59.0" text="Nom">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="nomTF" layoutX="122.0" layoutY="48.0" prefHeight="28.0" prefWidth="263.0" style="-fx-background-color: #EBF5FF;" />
-            <Label layoutX="20.0" layoutY="112.0" prefHeight="17.0" prefWidth="59.0" text="Prenom">
+            <TextField fx:id="nomTF" layoutX="122.0" layoutY="59.0" prefHeight="28.0" prefWidth="263.0" promptText="tapez le nom" style="-fx-background-color: #EBF5FF;" />
+            <Label layoutX="20.0" layoutY="123.0" prefHeight="17.0" prefWidth="59.0" text="Prenom">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="prenomTF" layoutX="122.0" layoutY="107.0" prefHeight="28.0" prefWidth="263.0" style="-fx-background-color: #EBF5FF;" />
-            <Label layoutX="20.0" layoutY="169.0" prefHeight="17.0" prefWidth="59.0" text="Email">
+            <TextField fx:id="prenomTF" layoutX="122.0" layoutY="118.0" prefHeight="28.0" prefWidth="263.0" promptText="tapez le prenom" style="-fx-background-color: #EBF5FF;" />
+            <Label layoutX="20.0" layoutY="180.0" prefHeight="17.0" prefWidth="59.0" text="Email">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="emailTF" layoutX="122.0" layoutY="163.0" prefHeight="28.0" prefWidth="263.0" style="-fx-background-color: #EBF5FF;" />
-            <Label layoutX="20.0" layoutY="223.0" prefHeight="19.0" prefWidth="75.0" text="Telephone">
+            <TextField fx:id="emailTF" layoutX="122.0" layoutY="174.0" prefHeight="28.0" prefWidth="263.0" promptText="tapez l'email" style="-fx-background-color: #EBF5FF;" />
+            <Label layoutX="20.0" layoutY="234.0" prefHeight="19.0" prefWidth="75.0" text="Telephone">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="telephoneTF" layoutX="122.0" layoutY="219.0" prefHeight="28.0" prefWidth="263.0" style="-fx-background-color: #EBF5FF;" />
-            <Label layoutX="20.0" layoutY="281.0" prefHeight="19.0" prefWidth="75.0" text="CIN">
+            <TextField fx:id="telephoneTF" layoutX="122.0" layoutY="230.0" prefHeight="28.0" prefWidth="263.0" promptText="tapez le telephone" style="-fx-background-color: #EBF5FF;" />
+            <Label layoutX="20.0" layoutY="292.0" prefHeight="19.0" prefWidth="75.0" text="CIN">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="cinTF" layoutX="122.0" layoutY="276.0" prefHeight="28.0" prefWidth="263.0" style="-fx-background-color: #EBF5FF;" />
-            <Button fx:id="submitTF" layoutX="20.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleSubmitAction" prefHeight="38.0" prefWidth="361.0" style="-fx-background-color: #1600A0;" text="Enregistrer" textFill="WHITE">
+            <TextField fx:id="cinTF" layoutX="122.0" layoutY="287.0" prefHeight="28.0" prefWidth="263.0" promptText="tapez le CIN" style="-fx-background-color: #EBF5FF;" />
+            <Button fx:id="submitTF" layoutX="20.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleSubmitAction" prefHeight="38.0" prefWidth="361.0" style="-fx-background-color: #5946FA;" text="Enregistrer" textFill="WHITE">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="cancelTF" layoutX="20.0" layoutY="420.0" mnemonicParsing="false" onAction="#handleCancelAction" prefHeight="38.0" prefWidth="361.0" style="-fx-background-color: #2ECC71;" text="Annuler" textFill="WHITE">
+            <Button fx:id="cancelTF" layoutX="20.0" layoutY="415.0" mnemonicParsing="false" onAction="#handleCancelAction" prefHeight="38.0" prefWidth="361.0" style="-fx-background-color: #2ECC71;" text="Annuler" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -55,6 +55,11 @@
             <Label fx:id="emailErrorTF" layoutX="122.0" layoutY="191.0" prefHeight="17.0" prefWidth="263.0" textFill="#d20000" />
             <Label fx:id="cinErrorTF" layoutX="122.0" layoutY="303.0" prefHeight="17.0" prefWidth="263.0" textFill="#d00000" />
             <Label fx:id="telephoneErrorTF" layoutX="124.0" layoutY="247.0" prefHeight="17.0" prefWidth="263.0" textFill="#d40000" />
+            <Label layoutX="134.0" layoutY="14.0" text="Modification ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

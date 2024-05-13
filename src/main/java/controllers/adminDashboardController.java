@@ -41,6 +41,8 @@ public class adminDashboardController {
     private TableColumn<Client, String> telephoneColumn;
     @FXML
     private TableColumn<Client, String> cinColumn;
+    @FXML
+    private TableColumn<Client, String> adresseColumn;
 
     @FXML
     private TableColumn<Client, Void> actionColumn;
@@ -57,8 +59,8 @@ public class adminDashboardController {
             private final HBox buttonsContainer = new HBox(10, btnEdit, btnDelete);
 
             {
-                btnEdit.setStyle("-fx-background-color: #002BAB; -fx-text-fill: white;");
-                btnDelete.setStyle("-fx-background-color: #f44336; -fx-text-fill: white;");
+                btnEdit.setStyle("-fx-background-color:  #5946FA; -fx-text-fill: white;");
+                btnDelete.setStyle("-fx-background-color: #E80000; -fx-text-fill: white;");
 
                 btnDelete.setOnAction(event -> {
                     Client client = getTableView().getItems().get(getIndex());
@@ -120,10 +122,11 @@ public class adminDashboardController {
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
         telephoneColumn.setCellValueFactory(new PropertyValueFactory<>("telephone"));
         cinColumn.setCellValueFactory(new PropertyValueFactory<>("cin"));
+        adresseColumn.setCellValueFactory(new PropertyValueFactory<>("adresseDomicile"));
 
         addActionButtons();
-        tableView.setItems(clients);  // Initially set all clients
-        loadClients();  // Load clients from database
+        tableView.setItems(clients);
+        loadClients();
 
         searchBarTF.textProperty().addListener((observable, oldValue, newValue) -> filterClients(newValue));
     }
@@ -132,7 +135,7 @@ public class adminDashboardController {
     private ObservableList<Client> getClients() {
         ObservableList<Client> clients = FXCollections.observableArrayList();
         Connection con = MyDatabase.getInstance().getConnection();
-        String query = "SELECT u.id, u.nom, u.prenom, u.email, u.telephone, c.cin " +
+        String query = "SELECT u.id, u.nom, u.prenom, u.email, u.telephone, c.cin, c.adresse_domicile " +
                 "FROM abstract_utilisateur u JOIN client c ON u.id = c.id " +
                 "WHERE u.type = 'client'";
 
@@ -144,13 +147,13 @@ public class adminDashboardController {
                         rs.getString("nom"),
                         rs.getString("prenom"),
                         rs.getString("email"),
-                        null,  // mot_de_passe is typically not retrieved for security reasons
+                        null,
                         rs.getString("telephone"),
-                        null,  // date_de_naissance is not used in the dashboard
-                        null,  // adresseDomicile is not used in the dashboard
+                        null,
+                        rs.getString("adresse_domicile"),
                         rs.getString("cin")
                 );
-                client.setId(rs.getInt("id"));  // Set the ID retrieved from the database
+                client.setId(rs.getInt("id"));
                 clients.add(client);
             }
         } catch (Exception e) {
@@ -160,7 +163,7 @@ public class adminDashboardController {
     }
 
     public void refreshClientTable() {
-        tableView.setItems(getClients());  // Fetch new data and update TableView
+        tableView.setItems(getClients());
     }
 
     private void confirmAndDelete(Client client) {
@@ -202,19 +205,19 @@ public class adminDashboardController {
 
         } catch (Exception e) {
             try {
-                if (con != null) con.rollback();  // Roll back transaction on error
+                if (con != null) con.rollback();
             } catch (Exception rollbackEx) {
                 e.printStackTrace();
             }
             e.printStackTrace();
             showAlert("Erreur de suppression", "Impossible de supprimer le client : " + e.getMessage());
         } finally {
-            // Close resources
+
             try {
                 if (pstmtClient != null) pstmtClient.close();
                 if (pstmtUser != null) pstmtUser.close();
                 if (con != null) {
-                    con.setAutoCommit(true); // Reset auto-commit mode
+                    con.setAutoCommit(true);
                     con.close();
                 }
             } catch (Exception closeEx) {
@@ -248,13 +251,13 @@ public class adminDashboardController {
     }
 
     private void loadClients() {
-        clients.clear();  // Clear existing data
-        clients.addAll(getClients());  // Load fresh data from the database
+        clients.clear();
+        clients.addAll(getClients());
     }
 
     private void filterClients(String searchText) {
         if (searchText.isEmpty()) {
-            tableView.setItems(clients);  // If search text is empty, show all clients
+            tableView.setItems(clients);
         } else {
             ObservableList<Client> filteredList = FXCollections.observableArrayList();
             for (Client client : clients) {
@@ -266,7 +269,7 @@ public class adminDashboardController {
                     filteredList.add(client);
                 }
             }
-            tableView.setItems(filteredList);  // Set the filtered list to the table
+            tableView.setItems(filteredList);
         }
     }
 

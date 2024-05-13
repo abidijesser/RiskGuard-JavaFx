@@ -285,7 +285,7 @@ public class AssuranceController {
 
 
     @FXML
-    public void rechercher(ActionEvent actionEvent) {
+    public void recherche(ActionEvent actionEvent) {
         String input = rechercheField.getText();
         if (!input.isEmpty()) {
             List<Assurance> results = assuranceService.searchAssurances(input);
@@ -313,7 +313,7 @@ public class AssuranceController {
 
 
     @FXML
-    private void reloadList(ActionEvent event) {
+   public void reloadList(ActionEvent event) {
         loadAssurances(); // Appel à la méthode pour recharger les assurances dans la ListView
     }
 

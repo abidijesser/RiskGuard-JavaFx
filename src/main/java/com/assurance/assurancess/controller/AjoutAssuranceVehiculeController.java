@@ -118,7 +118,7 @@ public class AjoutAssuranceVehiculeController {
                 "Image : " + image;
 
         // Sending the message
-        TwilioSMS.sendCustomMessage("21654113122", message);
+        //TwilioSMS.sendCustomMessage("21654113122", message);
         showAlert("Assurance véhicule ajoutée avec succès.");
     }
 
