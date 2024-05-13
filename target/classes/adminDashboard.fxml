@@ -27,7 +27,7 @@
                   <Image url="@logoDash.png" />
                </image>
             </ImageView>
-            <Button layoutX="6.0" layoutY="105.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="190.0" style="-fx-background-color: white;" text="Clients" textFill="#5946fa" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="105.0">
+            <Button layoutX="6.0" layoutY="105.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="190.0" style="-fx-background-color: white; -fx-padding: 0 55 0 0;" text="Clients" textFill="#5946fa" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="105.0">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -37,12 +37,12 @@
                   <Image url="@clientsIcon.png" />
                </image>
             </ImageView>
-            <Button layoutX="7.0" layoutY="170.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="190.0" style="-fx-background-color: white;" text="Statistiques" textFill="#5946fa">
+            <Button layoutX="7.0" layoutY="159.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="190.0" onAction="#navigateToStatistiques" style="-fx-background-color: white; -fx-padding: 0 22 0 0;" text="Statistiques" textFill="#5946fa">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="16.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="16.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@chartsIcon.png" />
                </image>
