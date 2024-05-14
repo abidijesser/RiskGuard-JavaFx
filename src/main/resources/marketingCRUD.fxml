@@ -94,6 +94,7 @@
             <Button onAction="#handleUpdateMarketingButton" styleClass="form-button" text="Update Marketing" />
             <Button onAction="#handleDeleteMarketingButton" styleClass="form-button" text="Delete Marketing" />
             <Button fx:id="generatePdfButton" onAction="#handleGeneratePdf" styleClass="form-button" text="Generate PDF" />
+            <Button fx:id="backTF" layoutX="749.0" layoutY="10.0" onAction="#navigateBack" styleClass="form-button" text="&lt; Back" />
          </HBox>
       
          <!-- TableView to display marketing data with better layout and appearance -->

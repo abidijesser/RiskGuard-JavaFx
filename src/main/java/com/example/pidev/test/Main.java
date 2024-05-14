@@ -24,16 +24,16 @@ public  class Main  extends Application {
 
     public void start(Stage primaryStage) {
         try {
-           // FXMLLoader loader = new FXMLLoader(getClass().getResource("/resetPasswordEmailVerification.fxml"));
-           // FXMLLoader loader = new FXMLLoader(getClass().getResource("/gestionemp.fxml"));
+           //FXMLLoader loader = new FXMLLoader(getClass().getResource("/marketingCRUD.fxml"));
+          //FXMLLoader loader = new FXMLLoader(getClass().getResource("/gestionemp.fxml"));
             //FXMLLoader loader = new FXMLLoader(getClass().getResource("/addClient.fxml"));
-           // FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
-            //FXMLLoader loader = new FXMLLoader(getClass().getResource("/clientView.fxml"));
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("/login.fxml"));
+           // FXMLLoader loader = new FXMLLoader(getClass().getResource("/clientView.fxml"));
             //FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pidev/hello-view.fxml"));
             //FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/Back.fxml"));
            // FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/listass.fxml"));
-           // FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/listass.fxml"));
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/adminDashboard.fxml"));
+          // FXMLLoader loader = new FXMLLoader(getClass().getResource("/Fxml/listass.fxml"));
+         //FXMLLoader loader = new FXMLLoader(getClass().getResource("/adminDashboard.fxml"));
 
             Parent root = loader.load();
 

@@ -6,11 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="e5054d68-f20b-412e-aa2b-82832c52bd83" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/adminDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/adminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/adminDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/adminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/adminDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/adminDashboardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/AssuranceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/assurance/assurancess/controller/AssuranceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/pidev/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/riskguard/crudjava/BackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/riskguard/crudjava/BackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Gestionemp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Gestionemp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/marketingCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/marketingCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/vieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/vieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Fxml/Back.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Fxml/Back.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/pidev/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/pidev/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/gestionemp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestionemp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/marketingCRUD.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/marketingCRUD.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +209,8 @@
       <workItem from="1715197666667" duration="796000" />
       <workItem from="1715229397487" duration="13559000" />
       <workItem from="1715550503955" duration="21830000" />
-      <workItem from="1715634434972" duration="6420000" />
+      <workItem from="1715634434972" duration="6560000" />
+      <workItem from="1715643243956" duration="6624000" />
     </task>
     <servers />
   </component>

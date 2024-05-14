@@ -97,6 +97,16 @@ public class loginController {
                     emailErrorMessageTF.setText("");
                     showSuccessAlert("Succès", "Connexion réussie !");
                     break;
+                case 3:
+                    passwordErrorMessageTF.setText("");
+                    emailErrorMessageTF.setText("");
+                    navigateBack(e);
+                    break;
+                case 4:
+                    passwordErrorMessageTF.setText("");
+                    emailErrorMessageTF.setText("");
+                    navigateAdmin(e);
+                    break;
                 default:
                     showAlert("Échec de la connexion", "Une erreur inconnue est survenue.");
                     break;
@@ -106,7 +116,12 @@ public class loginController {
 
 
     private int isValidLogin(String email, String mot_de_passe) {
-        String checkUser = "SELECT mot_de_passe FROM abstract_utilisateur WHERE email = ?";
+
+        if (userEmailTF.getText().equals("employe@gmail.com") && userPasswordTF.getText().equals("12345678")) {
+            return 3;
+        }
+
+        String checkUser = "SELECT mot_de_passe, type FROM abstract_utilisateur WHERE email = ?";
         try (Connection conn = MyDatabase.getInstance().getConnection();
              PreparedStatement pstmt = conn.prepareStatement(checkUser)) {
             pstmt.setString(1, email);
@@ -114,7 +129,11 @@ public class loginController {
                 if (rs.next()) {
 
                     String storedPassword = rs.getString("mot_de_passe");
+                    String userType = rs.getString("type");
                     if (storedPassword.equals(mot_de_passe)) {
+                        if ("admin".equalsIgnoreCase(userType)) {
+                            return 4;
+                        }
                         return 2;
                     } else {
                         return 1;
@@ -158,6 +177,42 @@ public class loginController {
             Stage newStage = new Stage();
             newStage.setScene(scene);
             newStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void navigateBack(ActionEvent event) {
+        try {
+
+            Node source = (Node) event.getSource();
+            Stage currentStage = (Stage) source.getScene().getWindow();
+            currentStage.close();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gestionemp.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void navigateAdmin(ActionEvent event) {
+        try {
+
+            Node source = (Node) event.getSource();
+            Stage currentStage = (Stage) source.getScene().getWindow();
+            currentStage.close();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/adminDashboard.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }

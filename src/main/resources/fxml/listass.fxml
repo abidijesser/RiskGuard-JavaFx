@@ -32,6 +32,7 @@
             <Button onAction="#ajouterAssuranceVie" styleClass="action-button" text="Add Ass Vie" />
             <Button onAction="#reloadList" styleClass="action-button" text="Reload" />
             <Button onAction="#gotoStatPage" styleClass="action-button" text="Stat" />
+         <Button layoutX="603.0" layoutY="10.0" onAction="#navigateBack" styleClass="action-button" text="&lt;back "  />
         </HBox>
         <Label />
     </VBox>

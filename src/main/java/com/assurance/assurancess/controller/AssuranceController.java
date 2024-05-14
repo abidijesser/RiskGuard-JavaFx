@@ -327,4 +327,24 @@ public class AssuranceController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void navigateBack(ActionEvent event) {
+        try {
+
+            Node source = (Node) event.getSource();
+            Stage currentStage = (Stage) source.getScene().getWindow();
+            currentStage.close();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gestionemp.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
